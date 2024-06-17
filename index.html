@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabin Panthi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <!-- 4c44f4 -->
+    <head>
+      <link
+        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap"
+        rel="stylesheet"
+      />
+      <style>
+        body {
+          font-family: "Raleway", sans-serif;
+        }
+        @keyframes fadeInUp {
+          from {
+            opacity: 0;
+            transform: translateY(20px);
+          }
+          to {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        #about {
+          background: url("./img/bg2.png") center/cover no-repeat;
+        }
+      </style>
+    </head>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+
+  <body class="bg-gray-100">
+    <nav class="md:bg-transparent bg-white absolute w-full z-10">
+      <div
+        class="container mx-auto px-4 py-4 md:px-6 lg:px-8 flex items-center justify-between"
+      >
+        <div class="logo">
+          <h1 class="text-3xl font-semibold">Sabin Panthi</h1>
+          <!-- Replace with your logo if needed -->
+        </div>
+        <!-- Mobile Menu Button -->
+        <div class="block lg:hidden">
+          <button id="menu-toggle" class="focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M4 6h16M4 12h16m-7 6h7"
+              ></path>
+            </svg>
+          </button>
+        </div>
+        <!-- Navbar Links (hidden on mobile by default) -->
+        <div
+          class="hidden lg:flex lg:items-center text-lg lg:justify-end lg: lg:space-x-4"
+        >
+          <a href="#about" class="px-3 py-2 hover:text-blue-500">About</a>
+          <a href="#services" class="px-3 py-2 hover:text-blue-500">Services</a>
+          <a href="#services" class="px-3 py-2 hover:text-blue-500">Projects</a>
+          <a href="#contact" class="px-3 py-2 hover:text-blue-500">Contact</a>
+          <a
+            href="#talk"
+            class="bg-blue-800 px-4 py-3 rounded-full hover:bg-gray-100 hover:border hover:border-blue-600 hover:text-black text-white"
+            >Let's Talk</a
+          >
+        </div>
+      </div>
+
+      <!-- Mobile Menu (hidden by default) -->
+      <div id="mobile-menu" class="lg:hidden hidden bg-white opacity-80">
+        <a href="#about" class="block py-2 px-4">About</a>
+        <a href="#services" class="block py-2 px-4">Services</a>
+        <a href="#contact" class="block py-2 px-4">Contact</a>
+        <a href="#talk" class="block py-2 px-4 bg-blue-700 text-white"
+          >Let's Talk</a
+        >
+      </div>
+    </nav>
+
+    <!-- Background Image with Overlay -->
+    <div class="relative">
+      <img
+        src="/img/bg1.png"
+        alt="Background Image"
+        class="w-full h-screen object-cover"
+      />
+      <div class="bg-black w-10"></div>
+      <!-- Overlay to darken the image -->
+
+      <div
+        class="absolute inset-0 flex flex-col items-center gap-10 lg:gap-20 justify-end font-bold"
+      >
+        <h1 class="p-5 text-center text-4xl lg:text-5xl">
+          Innovative Solutions for the Digital Age
+        </h1>
+        <img src="/img/img1.png" alt="Sabin Panthi" />
+      </div>
+    </div>
+
+    <!-- Main Content Area -->
+
+    <div
+      class="bg-black text-white p-8 flex flex-col lg:flex-row items-center justify-around space-y-6 lg:space-y-0 lg:space-x-6"
+    >
+      <div class="fade-in-up p-4 bg-gray-800 rounded-lg shadow-lg text-center">
+        <h3 class="text-2xl font-semibold mb-2">Frontend Development</h3>
+
+        <i class="bi bi-pc-display-horizontal text-6xl"></i>
+
+        <p class="text-lg mt-5">
+          Developed responsive and interactive user interfaces using modern
+          frontend technologies such as HTML, CSS, JavaScript, and TailwindCss
+        </p>
+      </div>
+
+      <div class="fade-in-up p-4 bg-gray-800 rounded-lg shadow-lg text-center">
+        <h3 class="text-2xl font-semibold mb-2">Backend Development</h3>
+        <i class="bi bi-database-gear text-6xl"></i>
+        <p class="text-lg mt-5">
+          Built robust and scalable backend systems using PHP, Laravel Framework
+          and databases like MySQL and PostgreSQL.
+        </p>
+      </div>
+    </div>
+
+    <div id="about" class="px-4">
+      <h1 class="font-semibold text-4xl pt-10 text-center">
+        About Sabin Panthi
+      </h1>
+
+      <div class="mt-10 flex lg:flex-row flex-col justify-between items-center">
+        <!-- Image -->
+        <div class="w-full lg:w-1/2 mb-4 lg:mb-0">
+          <img
+            src="./img/img3.png"
+            alt="Sabin Panthi"
+            class="mx-auto lg:mx-0"
+          />
+        </div>
+        <!-- Content -->
+        <div class="w-full lg:w-1/2 lg:mr-10 mt-5 lg:mt-0">
+          <h1 class="font-bold text-3xl mb-3">
+            Delivering High-Quality Web Solutions
+          </h1>
+          <p class="mb-8">
+            I specialize in designing and developing high-quality websites that
+            are visually appealing and user-friendly. My expertise lies in web
+            development, database management, and software engineering. I am
+            passionate about creating innovative solutions that make a positive
+            impact and always stay up-to-date with the latest technologies.
+          </p>
+
+          <div class="border-b border-blue-500 mb-3">
+            <h1 class="font-semibold text-lg mb-1 text-blue-500">
+              Vision for Innovative Solutions
+            </h1>
+            <p class="mb-4">
+              My vision is to build user-centric web solutions that are not only
+              visually appealing but also efficient and effective in meeting the
+              needs of my clients.
+            </p>
+          </div>
+
+          <div class="border-b border-blue-500 mb-3">
+            <h1 class="font-semibold text-lg mb-1 text-blue-500">
+              Mission for Delivering Exceptional Solutions
+            </h1>
+            <p>
+              My mission is to deliver exceptional web solutions that are
+              tailored to the unique needs of my clients. I strive to create
+              innovative solutions that exceed expectations and provide value
+              for my clients.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div id="services" class="pt-20 lg:text-left text-center flex flex-col">
+      <div class="lg:flex items-center justify-center lg:gap-20">
+        <h1 class="font-bold text-3xl lg:text-4xl">
+          Expertise and Specializations
+        </h1>
+        <p class="lg:w-1/2 mt-10 lg:mt-0 text-md lg:text-lg px-4 lg:px-0">
+          My expertise lies in several areas of specialization, including
+          frontend development, backend development, and database management. I
+          am proficient in HTML, CSS, JavaScript, and Laravel, among other
+          technologies, and I have extensive experience working on a wide range
+          of web projects.
+        </p>
+      </div>
+
+      <!-- skills -->
+      <div class="py-8 lg:py-16 lg:mx-40 p-4 mt-10">
+        <!-- Skill Cards -->
+        <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-4">
+          <!-- Frontend Development -->
+          <div class="flex items-start flex-col">
+            <div class="">
+              <h3 class="text-lg lg:text-xl lg:font-semibold">
+                Frontend Development
+              </h3>
+            </div>
+            <div class="w-full">
+              <div class="h-1 bg-gray-300 rounded-full">
+                <div
+                  class="h-full bg-blue-500 rounded-full"
+                  style="width: 80%"
+                ></div>
+              </div>
+              <!-- <p class="text-sm mt-2">80%</p> -->
+            </div>
+          </div>
+
+          <!-- Backend Development -->
+          <div class="flex items-start flex-col">
+            <div class="">
+              <h3 class="text-lg lg:text-xl lg:font-semibold">
+                Backend Development
+              </h3>
+            </div>
+            <div class="w-full">
+              <div class="h-1 bg-gray-300 rounded-full">
+                <div
+                  class="h-full bg-blue-500 rounded-full"
+                  style="width: 60%"
+                ></div>
+              </div>
+              <!-- <p class="text-sm mt-2">60%</p> -->
+            </div>
+          </div>
+
+          <!-- Database Management -->
+          <div class="flex items-start flex-col">
+            <div class="text-md lg:text-xl">
+              <h3 class="text-lg lg:text-xl lg:font-semibold">
+                Database Management
+              </h3>
+            </div>
+            <div class="w-full">
+              <div class="h-1 bg-gray-300 rounded-full">
+                <div
+                  class="h-full bg-blue-500 rounded-full"
+                  style="width: 50%"
+                ></div>
+              </div>
+              <!-- <p class="text-sm mt-2">50%</p> -->
+            </div>
+          </div>
+
+          <!-- Web Design -->
+          <div class="flex items-start flex-col">
+            <div class="">
+              <h3 class="text-lg lg:text-xl lg:font-semibold">Web Design</h3>
+            </div>
+            <div class="w-full">
+              <div class="h-1 bg-gray-300 rounded-full">
+                <div
+                  class="h-full bg-blue-500 rounded-full"
+                  style="width: 80%"
+                ></div>
+              </div>
+              <!-- <p class="text-sm mt-2">80%</p> -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bg-indigo-100">
+      <div class="pb-5 flex items-center justify-center p-3">
+        <div class="flex flex-col items-center">
+          <h1 class="font-bold text-2xl lg:text-4xl mt-20 text-center">
+            Expert Computer Engineer with a Passion for <br />
+            Innovative Solutions
+          </h1>
+          <p class="mt-5 lg:w-1/2 text-lg text-center">
+            As a computer engineer, I specialize in designing, developing, and
+            maintaining computer systems and software. I have expertise in
+            several areas of specialization, including web development and
+            database management. In web development, I am proficient in HTML,
+            CSS, JavaScript, Laravel, and can create visually appealing and
+            functional websites. I am passionate about learning new technologies
+            and always stay updated with the latest trends in the tech industry.
+            My goal is to continually improve my skills and contribute to
+            innovative projects that make a positive impact.
+          </p>
+        </div>
+      </div>
+
+      <div
+        class="lg:grid grid-cols-2 lg:gap-y-20 lg:gap-x-10 mt-10 lg:mx-40 pb-20 flex flex-col gap-5"
+      >
+        <div class="text-white p-5 border border-blue-600">
+          <div class="bg-indigo-700 p-6">
+            <i class="bi bi-check-circle font-bold text-3xl"></i>
+            <h1 class="font-semibold text-xl mt-5">Frontend Development</h1>
+            <p class="mt-4">
+              I am proficient in frontend development, utilizing HTML, CSS, and
+              JavaScript to create visually appealing and user-friendly websites
+              that engage users and deliver results.
+            </p>
+          </div>
+        </div>
+
+        <div class="border p-5 border-blue-600">
+          <div class="p-6">
+            <i class="bi bi-check-circle font-bold text-3xl"></i>
+            <h1 class="font-semibold text-xl mt-5">Backend Development</h1>
+            <p class="mt-4">
+              I have extensive experience in backend development, utilizing PHP,
+              Laravel and other technologies to build efficient and effective
+              web solutions that meet the needs of my clients.
+            </p>
+          </div>
+        </div>
+
+        <div class="border p-5 border-blue-600">
+          <div class="p-6">
+            <i class="bi bi-check-circle font-bold text-3xl"></i>
+            <h1 class="font-semibold text-xl mt-5">Database Management</h1>
+            <p class="mt-4">
+              I specialize in database management, utilizing the latest
+              technologies and best practices to deliver customized solutions
+              that meet the unique needs of my clients.
+            </p>
+          </div>
+        </div>
+
+        <div class="border p-5 border-blue-600">
+          <div class="p-6">
+            <i class="bi bi-check-circle font-bold text-3xl"></i>
+            <h1 class="font-semibold text-xl mt-5">Web Design</h1>
+            <p class="mt-4">
+              I am proficient in web design, utilizing the latest design trends
+              and techniques to create visually appealing and user-friendly
+              websites that engage users and deliver results.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="mt-20 flex flex-col items-center text-center">
+        <h1 class="font-bold text-3xl lg:text-4xl">
+          Let's Work Together to Deliver Innovative <br />
+          Solutions
+        </h1>
+        <p
+          class="bg-blue-700 text-white px-5 py-2 rounded-full w-fit my-10 text-2xl"
+        >
+          <a href="#contact" class="">Let's Talk</a>
+        </p>
+      </div>
+    </div>
+
+    <footer
+      class="h-10 p-20 bg-black text-white lg:flex justify-between text-center items-center"
+    >
+      <p class="font-semibold text-xl">Sabin Panthi</p>
+
+      <div id="contact" class="flex gap-5">
+        <p>Contacts</p>
+        <a href="https://www.facebook.com/071.sabin.panthi" target="_blank"
+          ><i class="bi bi-facebook hover:text-blue-500 text-xl"></i
+        ></a>
+        <a href="https://www.twitter.com/PanthiSabin" target="_blank"
+          ><i class="bi bi-twitter hover:text-blue-400 text-xl"></i
+        ></a>
+        <a href="https://www.instagram.com/sabin_panthi" target="_blank"
+          ><i class="bi bi-instagram hover:text-pink-500 text-xl"></i
+        ></a>
+        <a href="https://www.github.com/071Sabin" target="_blank"
+          ><i class="bi bi-github hover:text-gray-300 text-xl"></i
+        ></a>
+        <a href="mailto: 071.sabin.panthi@gmail.com"
+          ><i class="bi bi-envelope-fill hover:text-orange-500 text-xl"></i
+        ></a>
+        <!-- <p><em>Sabin Panthi</em></p> -->
+      </div>
+    </footer>
+
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      function toggleExpand(section) {
+        const content = document.getElementById(section + "Content");
+        content.classList.toggle("expanded");
+      }
+    </script>
+  </body>
+</html>
