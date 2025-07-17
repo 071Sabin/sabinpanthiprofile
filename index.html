@@ -8,6 +8,8 @@
       rel="stylesheet"
       href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
     />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
     <!-- 4c44f4 -->
     <head>
       <link
@@ -15,6 +17,39 @@
         rel="stylesheet"
       />
       <style>
+        @keyframes grow {
+          from {
+            width: 0%;
+          }
+          to {
+            width: var(--target-width, 80%);
+          }
+        }
+
+        .animate-grow-bar {
+          animation: grow 1.8s ease-out forwards;
+        }
+
+        /* Use utility classes or JS to dynamically control width on scroll if needed */
+        .delay-\[100ms\] {
+          animation-delay: 0.1s;
+          --target-width: 85%;
+        }
+        .delay-\[300ms\] {
+          animation-delay: 0.3s;
+          --target-width: 70%;
+        }
+        .delay-\[500ms\] {
+          animation-delay: 0.5s;
+          --target-width: 60%;
+        }
+        .delay-\[700ms\] {
+          animation-delay: 0.7s;
+          --target-width: 80%;
+        }
+        html {
+          scroll-behavior: smooth;
+        }
         body {
           font-family: "Raleway", sans-serif;
         }
@@ -31,372 +66,579 @@
         #about {
           background: url("./img/bg2.png") center/cover no-repeat;
         }
+        @keyframes fade-in {
+          0% {
+            opacity: 0;
+            transform: translateY(-10px);
+          }
+          100% {
+            opacity: 1;
+            transform: translateY(0);
+          }
+        }
+        .animate-fade-in {
+          animation: fade-in 1s ease-out forwards;
+        }
       </style>
     </head>
 
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
 
-  <body class="bg-gray-100">
-    <nav class="md:bg-transparent bg-white absolute w-full z-10">
+  <body class="bg-slate-900 text-white font-sans">
+    <nav class="absolute w-full z-50 bg-slate-900/80 backdrop-blur-md">
       <div
-        class="container mx-auto px-4 py-4 md:px-6 lg:px-8 flex items-center justify-between"
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
       >
-        <div class="logo">
-          <h1 class="text-3xl font-semibold">Sabin Panthi</h1>
-          <!-- Replace with your logo if needed -->
-        </div>
+        <h1 class="text-2xl font-bold text-cyan-400">Sabin Panthi</h1>
+
         <!-- Mobile Menu Button -->
         <div class="block lg:hidden">
-          <button id="menu-toggle" class="focus:outline-none">
+          <button id="menu-toggle" class="text-white focus:outline-none">
             <svg
               class="w-6 h-6"
               fill="none"
               stroke="currentColor"
+              stroke-width="2"
               viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
             >
               <path
                 stroke-linecap="round"
                 stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 6h16M4 12h16m-7 6h7"
+                d="M4 6h16M4 12h16M4 18h16"
               ></path>
             </svg>
           </button>
         </div>
-        <!-- Navbar Links (hidden on mobile by default) -->
-        <div
-          class="hidden lg:flex lg:items-center text-lg lg:justify-end lg: lg:space-x-4"
-        >
-          <a href="#about" class="px-3 py-2 hover:text-blue-500">About</a>
-          <a href="#services" class="px-3 py-2 hover:text-blue-500">Services</a>
-          <a href="#services" class="px-3 py-2 hover:text-blue-500">Projects</a>
-          <a href="#contact" class="px-3 py-2 hover:text-blue-500">Contact</a>
+
+        <!-- Desktop Links -->
+        <div class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+          <a href="#about" class="hover:text-cyan-400">About</a>
+          <a href="#services" class="hover:text-cyan-400">Services</a>
+          <a href="#projects" class="hover:text-cyan-400">Projects</a>
+          <a href="#contact" class="hover:text-cyan-400">Contact</a>
           <a
             href="#talk"
-            class="bg-blue-800 px-4 py-3 rounded-full hover:bg-gray-100 hover:border hover:border-blue-600 hover:text-black text-white"
-            >Let's Talk</a
+            class="bg-cyan-500 hover:bg-cyan-600 transition px-5 py-2 rounded-full text-white"
           >
+            Let's Talk
+          </a>
         </div>
       </div>
 
-      <!-- Mobile Menu (hidden by default) -->
-      <div id="mobile-menu" class="lg:hidden hidden bg-white opacity-80">
-        <a href="#about" class="block py-2 px-4">About</a>
-        <a href="#services" class="block py-2 px-4">Services</a>
-        <a href="#contact" class="block py-2 px-4">Contact</a>
-        <a href="#talk" class="block py-2 px-4 bg-blue-700 text-white"
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-slate-800 text-white">
+        <a href="#about" class="block py-3 px-4 hover:bg-slate-700">About</a>
+        <a href="#services" class="block py-3 px-4 hover:bg-slate-700"
+          >Services</a
+        >
+        <a href="#projects" class="block py-3 px-4 hover:bg-slate-700"
+          >Projects</a
+        >
+        <a href="#contact" class="block py-3 px-4 hover:bg-slate-700"
+          >Contact</a
+        >
+        <a href="#talk" class="block py-3 px-4 bg-cyan-600 text-center"
           >Let's Talk</a
         >
       </div>
     </nav>
 
     <!-- Background Image with Overlay -->
-    <div class="relative">
-      <img
-        src="/img/bg1.png"
-        alt="Background Image"
-        class="w-full h-screen object-cover"
-      />
-      <div class="bg-black w-10"></div>
-      <!-- Overlay to darken the image -->
 
+    <section
+      class="relative w-full min-h-screen bg-slate-900 text-white overflow-hidden pt-24"
+    >
+      <!-- Particles Background -->
+      <div id="particles-js" class="absolute inset-0 z-0"></div>
+
+      <!-- Greeting Bubble -->
       <div
-        class="absolute inset-0 flex flex-col items-center gap-10 lg:gap-20 justify-end font-bold"
+        id="greeting-bubble"
+        class="absolute top-6 left-6 bg-white/10 backdrop-blur-md text-sm px-4 py-2 rounded-full text-cyan-300 shadow-md animate-fade-in z-10"
       >
-        <h1 class="p-5 text-center text-4xl lg:text-5xl">
-          Innovative Solutions for the Digital Age
-        </h1>
-        <img src="/img/img1.png" alt="Sabin Panthi" />
+        👋 Hey, I’m Jhon. I build clean, scalable systems.
       </div>
-    </div>
+
+      <!-- Content -->
+      <div
+        class="relative z-10 max-w-5xl mx-auto h-full px-6 flex flex-col items-center justify-center text-center space-y-8"
+        data-aos="fade-up"
+      >
+        <!-- Profile Image -->
+        <img
+          src="/img/img1.png"
+          alt="Sabin Panthi"
+          class="w-28 h-28 sm:w-32 sm:h-32 rounded-full border-4 border-cyan-500 shadow-lg transition-transform duration-300 hover:scale-105 hover:shadow-cyan-500/30"
+        />
+
+        <!-- Typing Role -->
+        <p class="uppercase tracking-[0.2em] text-sm text-cyan-400 font-medium">
+          <span id="typing-role"></span><span class="animate-pulse">|</span>
+        </p>
+
+        <!-- Heading Card -->
+        <div
+          class="bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl px-6 py-10 sm:py-14 shadow-md relative w-full"
+        >
+          <!-- Blob SVG -->
+          <svg
+            class="absolute -top-8 -left-8 w-40 h-40 opacity-30 animate-pulse blur-xl fill-cyan-400 z-0"
+            viewBox="0 0 200 200"
+          >
+            <path
+              d="M52.2,-60.2C68.2,-49.2,80.3,-32.4,78.2,-17.4C76.2,-2.4,59.9,11,47.3,26.3C34.6,41.6,25.6,58.8,11.5,65.2C-2.6,71.6,-22,67.2,-36.3,56.1C-50.6,44.9,-59.9,27,-63.2,8.5C-66.5,-10,-63.8,-29,-54.6,-43.6C-45.3,-58.3,-29.6,-68.7,-12.3,-72.5C5,-76.2,23.9,-73.3,52.2,-60.2Z"
+              transform="translate(100 100)"
+            />
+          </svg>
+
+          <!-- Title -->
+          <h1
+            class="relative z-10 text-balance text-4xl sm:text-5xl lg:text-6xl font-extrabold leading-tight max-w-[28ch] mx-auto"
+          >
+            Building Scalable Web Solutions<br class="hidden sm:inline" />
+            for the Modern Web
+          </h1>
+
+          <!-- Subtitle -->
+          <p
+            class="relative z-10 text-gray-300 text-base sm:text-lg mt-6 max-w-2xl mx-auto"
+          >
+            I craft elegant, performant, and scalable applications with Laravel,
+            TailwindCSS, and clean architecture practices.
+          </p>
+        </div>
+
+        <!-- CTA Button -->
+        <a
+          href="#projects"
+          class="inline-block mt-4 bg-cyan-500 hover:bg-cyan-600 transition text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 active:scale-95 focus:ring-2 focus:ring-cyan-400"
+        >
+          View My Projects
+        </a>
+      </div>
+
+      <!-- Scroll Hint -->
+      <div class="absolute bottom-6 flex justify-center w-full animate-bounce">
+        <div class="text-cyan-400 text-sm">Scroll ↓</div>
+      </div>
+    </section>
 
     <!-- Main Content Area -->
 
-    <div
-      class="bg-black text-white p-8 flex flex-col lg:flex-row items-center justify-around space-y-6 lg:space-y-0 lg:space-x-6"
-    >
-      <div class="fade-in-up p-4 bg-gray-800 rounded-lg shadow-lg text-center">
-        <h3 class="text-2xl font-semibold mb-2">Frontend Development</h3>
-
-        <i class="bi bi-pc-display-horizontal text-6xl"></i>
-
-        <p class="text-lg mt-5">
-          Developed responsive and interactive user interfaces using modern
-          frontend technologies such as HTML, CSS, JavaScript, and TailwindCss
-        </p>
-      </div>
-
-      <div class="fade-in-up p-4 bg-gray-800 rounded-lg shadow-lg text-center">
-        <h3 class="text-2xl font-semibold mb-2">Backend Development</h3>
-        <i class="bi bi-database-gear text-6xl"></i>
-        <p class="text-lg mt-5">
-          Built robust and scalable backend systems using PHP, Laravel Framework
-          and databases like MySQL and PostgreSQL.
-        </p>
-      </div>
-    </div>
-
-    <div id="about" class="px-4">
-      <h1 class="font-semibold text-4xl pt-10 text-center">
-        About Sabin Panthi
-      </h1>
-
-      <div class="mt-10 flex lg:flex-row flex-col justify-between items-center">
-        <!-- Image -->
-        <div class="w-full lg:w-1/2 mb-4 lg:mb-0">
-          <img
-            src="./img/img3.png"
-            alt="Sabin Panthi"
-            class="mx-auto lg:mx-0"
-          />
-        </div>
-        <!-- Content -->
-        <div class="w-full lg:w-1/2 lg:mr-10 mt-5 lg:mt-0">
-          <h1 class="font-bold text-3xl mb-3">
-            Delivering High-Quality Web Solutions
-          </h1>
-          <p class="mb-8">
-            I specialize in designing and developing high-quality websites that
-            are visually appealing and user-friendly. My expertise lies in web
-            development, database management, and software engineering. I am
-            passionate about creating innovative solutions that make a positive
-            impact and always stay up-to-date with the latest technologies.
-          </p>
-
-          <div class="border-b border-blue-500 mb-3">
-            <h1 class="font-semibold text-lg mb-1 text-blue-500">
-              Vision for Innovative Solutions
-            </h1>
-            <p class="mb-4">
-              My vision is to build user-centric web solutions that are not only
-              visually appealing but also efficient and effective in meeting the
-              needs of my clients.
-            </p>
-          </div>
-
-          <div class="border-b border-blue-500 mb-3">
-            <h1 class="font-semibold text-lg mb-1 text-blue-500">
-              Mission for Delivering Exceptional Solutions
-            </h1>
-            <p>
-              My mission is to deliver exceptional web solutions that are
-              tailored to the unique needs of my clients. I strive to create
-              innovative solutions that exceed expectations and provide value
-              for my clients.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div id="services" class="pt-20 lg:text-left text-center flex flex-col">
-      <div class="lg:flex items-center justify-center lg:gap-20">
-        <h1 class="font-bold text-3xl lg:text-4xl">
-          Expertise and Specializations
-        </h1>
-        <p class="lg:w-1/2 mt-10 lg:mt-0 text-md lg:text-lg px-4 lg:px-0">
-          My expertise lies in several areas of specialization, including
-          frontend development, backend development, and database management. I
-          am proficient in HTML, CSS, JavaScript, and Laravel, among other
-          technologies, and I have extensive experience working on a wide range
-          of web projects.
-        </p>
-      </div>
-
-      <!-- skills -->
-      <div class="py-8 lg:py-16 lg:mx-40 p-4 mt-10">
-        <!-- Skill Cards -->
-        <div class="grid lg:grid-cols-2 grid-cols-1 gap-x-10 gap-y-4">
-          <!-- Frontend Development -->
-          <div class="flex items-start flex-col">
-            <div class="">
-              <h3 class="text-lg lg:text-xl lg:font-semibold">
-                Frontend Development
-              </h3>
-            </div>
-            <div class="w-full">
-              <div class="h-1 bg-gray-300 rounded-full">
-                <div
-                  class="h-full bg-blue-500 rounded-full"
-                  style="width: 80%"
-                ></div>
-              </div>
-              <!-- <p class="text-sm mt-2">80%</p> -->
-            </div>
-          </div>
-
-          <!-- Backend Development -->
-          <div class="flex items-start flex-col">
-            <div class="">
-              <h3 class="text-lg lg:text-xl lg:font-semibold">
-                Backend Development
-              </h3>
-            </div>
-            <div class="w-full">
-              <div class="h-1 bg-gray-300 rounded-full">
-                <div
-                  class="h-full bg-blue-500 rounded-full"
-                  style="width: 60%"
-                ></div>
-              </div>
-              <!-- <p class="text-sm mt-2">60%</p> -->
-            </div>
-          </div>
-
-          <!-- Database Management -->
-          <div class="flex items-start flex-col">
-            <div class="text-md lg:text-xl">
-              <h3 class="text-lg lg:text-xl lg:font-semibold">
-                Database Management
-              </h3>
-            </div>
-            <div class="w-full">
-              <div class="h-1 bg-gray-300 rounded-full">
-                <div
-                  class="h-full bg-blue-500 rounded-full"
-                  style="width: 50%"
-                ></div>
-              </div>
-              <!-- <p class="text-sm mt-2">50%</p> -->
-            </div>
-          </div>
-
-          <!-- Web Design -->
-          <div class="flex items-start flex-col">
-            <div class="">
-              <h3 class="text-lg lg:text-xl lg:font-semibold">Web Design</h3>
-            </div>
-            <div class="w-full">
-              <div class="h-1 bg-gray-300 rounded-full">
-                <div
-                  class="h-full bg-blue-500 rounded-full"
-                  style="width: 80%"
-                ></div>
-              </div>
-              <!-- <p class="text-sm mt-2">80%</p> -->
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="bg-indigo-100">
-      <div class="pb-5 flex items-center justify-center p-3">
-        <div class="flex flex-col items-center">
-          <h1 class="font-bold text-2xl lg:text-4xl mt-20 text-center">
-            Expert Computer Engineer with a Passion for <br />
-            Innovative Solutions
-          </h1>
-          <p class="mt-5 lg:w-1/2 text-lg text-center">
-            As a computer engineer, I specialize in designing, developing, and
-            maintaining computer systems and software. I have expertise in
-            several areas of specialization, including web development and
-            database management. In web development, I am proficient in HTML,
-            CSS, JavaScript, Laravel, and can create visually appealing and
-            functional websites. I am passionate about learning new technologies
-            and always stay updated with the latest trends in the tech industry.
-            My goal is to continually improve my skills and contribute to
-            innovative projects that make a positive impact.
-          </p>
-        </div>
-      </div>
-
-      <div
-        class="lg:grid grid-cols-2 lg:gap-y-20 lg:gap-x-10 mt-10 lg:mx-40 pb-20 flex flex-col gap-5"
-      >
-        <div class="text-white p-5 border border-blue-600">
-          <div class="bg-indigo-700 p-6">
-            <i class="bi bi-check-circle font-bold text-3xl"></i>
-            <h1 class="font-semibold text-xl mt-5">Frontend Development</h1>
-            <p class="mt-4">
-              I am proficient in frontend development, utilizing HTML, CSS, and
-              JavaScript to create visually appealing and user-friendly websites
-              that engage users and deliver results.
-            </p>
-          </div>
-        </div>
-
-        <div class="border p-5 border-blue-600">
-          <div class="p-6">
-            <i class="bi bi-check-circle font-bold text-3xl"></i>
-            <h1 class="font-semibold text-xl mt-5">Backend Development</h1>
-            <p class="mt-4">
-              I have extensive experience in backend development, utilizing PHP,
-              Laravel and other technologies to build efficient and effective
-              web solutions that meet the needs of my clients.
-            </p>
-          </div>
-        </div>
-
-        <div class="border p-5 border-blue-600">
-          <div class="p-6">
-            <i class="bi bi-check-circle font-bold text-3xl"></i>
-            <h1 class="font-semibold text-xl mt-5">Database Management</h1>
-            <p class="mt-4">
-              I specialize in database management, utilizing the latest
-              technologies and best practices to deliver customized solutions
-              that meet the unique needs of my clients.
-            </p>
-          </div>
-        </div>
-
-        <div class="border p-5 border-blue-600">
-          <div class="p-6">
-            <i class="bi bi-check-circle font-bold text-3xl"></i>
-            <h1 class="font-semibold text-xl mt-5">Web Design</h1>
-            <p class="mt-4">
-              I am proficient in web design, utilizing the latest design trends
-              and techniques to create visually appealing and user-friendly
-              websites that engage users and deliver results.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <div class="mt-20 flex flex-col items-center text-center">
-        <h1 class="font-bold text-3xl lg:text-4xl">
-          Let's Work Together to Deliver Innovative <br />
-          Solutions
-        </h1>
-        <p
-          class="bg-blue-700 text-white px-5 py-2 rounded-full w-fit my-10 text-2xl"
+    <!-- Skills / Services Section -->
+    <section class="bg-slate-950 py-16 px-6 text-white mt-10">
+      <div class="max-w-6xl mx-auto">
+        <h2
+          class="text-4xl font-extrabold text-center mb-12"
+          data-aos="fade-up"
         >
-          <a href="#contact" class="">Let's Talk</a>
+          What I Do
+        </h2>
+
+        <div class="grid md:grid-cols-2 gap-10">
+          <!-- Frontend Card -->
+          <div
+            class="group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-cyan-500/20 hover:cursor-pointer overflow-hidden"
+            data-aos="fade-up"
+          >
+            <!-- Icon Glow -->
+            <div
+              class="absolute top-0 left-0 w-0 h-0 bg-cyan-400/10 blur-2xl group-hover:w-full group-hover:h-full transition-all duration-500"
+            ></div>
+
+            <!-- Icon -->
+            <div class="text-cyan-400 mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-12 h-12"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M9.75 3v2.25M14.25 3v2.25M3 9.75h18M4.5 7.5h15a1.5 1.5 0 0 1 1.5 1.5v10.5a1.5 1.5 0 0 1-1.5 1.5h-15A1.5 1.5 0 0 1 3 19.5V9a1.5 1.5 0 0 1 1.5-1.5Z"
+                />
+              </svg>
+            </div>
+
+            <!-- Title & Description -->
+            <h3 class="text-2xl font-semibold mb-2">Frontend Development</h3>
+            <p class="text-gray-300 leading-relaxed">
+              Crafting pixel-perfect, responsive interfaces with HTML,
+              TailwindCSS, Alpine.js & smooth animations.
+            </p>
+          </div>
+
+          <!-- Backend Card -->
+          <div
+            class="group relative bg-gradient-to-br from-slate-800 to-slate-900 rounded-2xl p-8 shadow-xl transition-all duration-300 hover:scale-[1.02] hover:shadow-cyan-500/20 hover:cursor-pointer overflow-hidden"
+            data-aos="fade-up"
+            data-aos-delay="100"
+          >
+            <!-- Icon Glow -->
+            <div
+              class="absolute top-0 left-0 w-0 h-0 bg-cyan-400/10 blur-2xl group-hover:w-full group-hover:h-full transition-all duration-500"
+            ></div>
+
+            <!-- Icon -->
+            <div class="text-cyan-400 mb-4">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-12 h-12"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M3 5.25a2.25 2.25 0 0 1 2.25-2.25h13.5A2.25 2.25 0 0 1 21 5.25v2.25H3V5.25ZM3 9.75h18v8.25a2.25 2.25 0 0 1-2.25 2.25H5.25A2.25 2.25 0 0 1 3 18V9.75ZM7.5 14.25h3v1.5h-3v-1.5Z"
+                />
+              </svg>
+            </div>
+
+            <!-- Title & Description -->
+            <h3 class="text-2xl font-semibold mb-2">Backend Development</h3>
+            <p class="text-gray-300 leading-relaxed">
+              Building fast, secure APIs & backend logic with Laravel,
+              MySQL/PostgreSQL, and clean code practices.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="bg-slate-950 text-white py-20 px-6 sm:px-10">
+      <div class="max-w-7xl mx-auto">
+        <!-- Section Title -->
+        <h2
+          class="text-center text-4xl sm:text-5xl font-extrabold mb-16"
+          data-aos="fade-up"
+        >
+          About <span class="text-cyan-400">Sabin Panthi</span>
+        </h2>
+
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+          <!-- Image Side -->
+          <div data-aos="fade-right">
+            <img
+              src="/img/img3.png"
+              alt="Sabin Panthi"
+              class="w-1/2 rounded-xl mx-auto shadow-2xl border border-cyan-500/10"
+            />
+          </div>
+
+          <!-- Text Content Side -->
+          <div data-aos="fade-left" class="space-y-10">
+            <!-- Main Description -->
+            <div>
+              <h3 class="text-3xl sm:text-4xl font-bold mb-4 leading-tight">
+                Delivering High-Quality Web Solutions
+              </h3>
+              <p class="text-gray-300 text-lg leading-relaxed">
+                I specialize in crafting user-first websites and web
+                applications with a focus on performance, accessibility, and
+                modern design. With expertise in Laravel, TailwindCSS, and
+                scalable architectures, I aim to build products that don't just
+                work — they delight.
+              </p>
+            </div>
+
+            <!-- Vision -->
+            <div
+              class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-cyan-500/10 hover:shadow-cyan-500/10 transition-shadow duration-300"
+            >
+              <h4 class="text-xl font-semibold text-cyan-400 mb-2">Vision</h4>
+              <p class="text-gray-300">
+                To craft future-ready, user-focused digital products that drive
+                impact through thoughtful design and clean, maintainable code.
+              </p>
+            </div>
+
+            <!-- Mission -->
+            <div
+              class="bg-white/5 backdrop-blur-sm p-6 rounded-xl border border-cyan-500/10 hover:shadow-cyan-500/10 transition-shadow duration-300"
+            >
+              <h4 class="text-xl font-semibold text-cyan-400 mb-2">Mission</h4>
+              <p class="text-gray-300">
+                To deliver exceptional full-stack web solutions tailored to
+                client needs — blending performance, aesthetics, and innovation
+                with every line of code.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="services" class="bg-slate-950 text-white py-20 px-6 sm:px-10">
+      <div class="max-w-7xl mx-auto space-y-16">
+        <!-- Title and Description -->
+        <div
+          class="text-center lg:text-left flex flex-col lg:flex-row lg:items-center lg:justify-between gap-10"
+          data-aos="fade-up"
+        >
+          <h2 class="text-4xl font-extrabold text-cyan-400">
+            Expertise & Specializations
+          </h2>
+          <p class="lg:max-w-2xl text-gray-300 text-lg leading-relaxed">
+            My expertise spans frontend and backend development, database
+            management, and UI design. I’m proficient in Laravel, JavaScript,
+            TailwindCSS, and related tools — delivering robust, performant, and
+            elegant web solutions.
+          </p>
+        </div>
+
+        <!-- Skills Grid -->
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14"
+          data-aos="fade-up"
+          data-aos-delay="100"
+        >
+          <!-- Skill Card Template -->
+          <div
+            class="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 shadow-md hover:shadow-cyan-500/10 transition-all duration-300 group"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-white">
+              Frontend Development
+            </h3>
+            <div class="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
+              <div
+                class="h-full bg-cyan-400 w-[0%] animate-grow-bar delay-[100ms]"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 shadow-md hover:shadow-cyan-500/10 transition-all duration-300 group"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-white">
+              Backend Development
+            </h3>
+            <div class="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
+              <div
+                class="h-full bg-cyan-400 w-[0%] animate-grow-bar delay-[300ms]"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 shadow-md hover:shadow-cyan-500/10 transition-all duration-300 group"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-white">
+              Database Management
+            </h3>
+            <div class="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
+              <div
+                class="h-full bg-cyan-400 w-[0%] animate-grow-bar delay-[500ms]"
+              ></div>
+            </div>
+          </div>
+
+          <div
+            class="bg-white/5 backdrop-blur-sm rounded-2xl border border-white/10 p-6 shadow-md hover:shadow-cyan-500/10 transition-all duration-300 group"
+          >
+            <h3 class="text-xl font-semibold mb-4 text-white">Web Design</h3>
+            <div class="w-full h-2 bg-gray-700 rounded-full overflow-hidden">
+              <div
+                class="h-full bg-cyan-400 w-[0%] animate-grow-bar delay-[700ms]"
+              ></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section
+      class="bg-gradient-to-b from-slate-950 to-slate-900 text-white px-6 py-20"
+    >
+      <div class="max-w-6xl mx-auto text-center" data-aos="fade-up">
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-cyan-400 mb-6 leading-tight"
+        >
+          Engineer. Creator. Problem Solver.
+        </h2>
+        <p
+          class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed"
+        >
+          I specialize in building scalable, impactful web systems using modern
+          technologies. From UI development to backend architecture and database
+          performance — I bring technical depth, clean code, and a design-driven
+          mindset to every project.
         </p>
       </div>
-    </div>
+
+      <!-- Services Grid -->
+      <div
+        class="mt-20 grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-14 max-w-6xl mx-auto"
+        data-aos="fade-up"
+        data-aos-delay="100"
+      >
+        <!-- Card -->
+        <div
+          class="bg-white/5 border border-cyan-500/10 rounded-2xl p-8 hover:shadow-cyan-500/10 hover:scale-[1.01] transition duration-300 group"
+        >
+          <div class="flex items-center space-x-4 mb-4">
+            <i
+              class="bi bi-code text-cyan-400 text-3xl group-hover:animate-pulse"
+            ></i>
+            <h3 class="text-2xl font-semibold text-white">
+              Frontend Development
+            </h3>
+          </div>
+          <p class="text-gray-300 leading-relaxed">
+            Crafting pixel-perfect, responsive, and accessible user interfaces
+            with HTML, CSS, JavaScript, and TailwindCSS. Every component is
+            built with performance and UX in mind.
+          </p>
+        </div>
+
+        <!-- Card -->
+        <div
+          class="bg-white/5 border border-cyan-500/10 rounded-2xl p-8 hover:shadow-cyan-500/10 hover:scale-[1.01] transition duration-300 group"
+        >
+          <div class="flex items-center space-x-4 mb-4">
+            <i
+              class="bi bi-terminal text-cyan-400 text-3xl group-hover:animate-pulse"
+            ></i>
+            <h3 class="text-2xl font-semibold text-white">
+              Backend Development
+            </h3>
+          </div>
+          <p class="text-gray-300 leading-relaxed">
+            Building robust backend systems using Laravel and PHP. From RESTful
+            APIs to authentication and complex business logic — stability and
+            security are core priorities.
+          </p>
+        </div>
+
+        <!-- Card -->
+        <div
+          class="bg-white/5 border border-cyan-500/10 rounded-2xl p-8 hover:shadow-cyan-500/10 hover:scale-[1.01] transition duration-300 group"
+        >
+          <div class="flex items-center space-x-4 mb-4">
+            <i
+              class="bi bi-database text-cyan-400 text-3xl group-hover:animate-pulse"
+            ></i>
+            <h3 class="text-2xl font-semibold text-white">
+              Database Management
+            </h3>
+          </div>
+          <p class="text-gray-300 leading-relaxed">
+            Designing optimized, scalable databases with MySQL, PostgreSQL, and
+            Laravel’s Eloquent ORM. Ensuring performance, structure, and
+            security for long-term maintainability.
+          </p>
+        </div>
+
+        <!-- Card -->
+        <div
+          class="bg-white/5 border border-cyan-500/10 rounded-2xl p-8 hover:shadow-cyan-500/10 hover:scale-[1.01] transition duration-300 group"
+        >
+          <div class="flex items-center space-x-4 mb-4">
+            <i
+              class="bi bi-palette text-cyan-400 text-3xl group-hover:animate-pulse"
+            ></i>
+            <h3 class="text-2xl font-semibold text-white">UI/UX Design</h3>
+          </div>
+          <p class="text-gray-300 leading-relaxed">
+            Blending functionality with design. I deliver interfaces that are
+            both beautiful and intuitive, focusing on layout, accessibility, and
+            micro-interactions that enhance usability.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-slate-950 py-24 px-6 text-center text-white">
+      <div class="max-w-3xl mx-auto" data-aos="fade-up">
+        <h2
+          class="text-4xl lg:text-5xl font-extrabold leading-tight mb-8 tracking-tight text-cyan-400"
+        >
+          Let's Build Something Exceptional Together
+        </h2>
+        <p class="text-lg text-gray-300 mb-10">
+          Whether you have a project in mind or just want to explore ideas, I'm
+          always open to collaborating on something meaningful.
+        </p>
+
+        <a
+          href="#contact"
+          class="inline-block bg-cyan-500 hover:bg-cyan-600 text-white text-xl font-medium px-8 py-3 rounded-full shadow-md hover:shadow-cyan-500/30 transition duration-300 ease-in-out"
+        >
+          Let's Talk
+        </a>
+      </div>
+    </section>
 
     <footer
-      class="h-10 p-20 bg-black text-white lg:flex justify-between text-center items-center"
+      class="bg-gradient-to-r from-slate-900 to-slate-950 text-gray-300 px-6 py-12"
     >
-      <p class="font-semibold text-xl">Sabin Panthi</p>
+      <div
+        class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10"
+      >
+        <!-- Left Section: Name or Logo -->
+        <div class="text-center lg:text-left">
+          <h2 class="text-2xl font-bold text-white tracking-wide">
+            Sabin Panthi
+          </h2>
+          <p class="text-sm mt-1 text-gray-400">Full Stack Developer</p>
+        </div>
 
-      <div id="contact" class="flex gap-5">
-        <p>Contacts</p>
-        <a href="https://www.facebook.com/071.sabin.panthi" target="_blank"
-          ><i class="bi bi-facebook hover:text-blue-500 text-xl"></i
-        ></a>
-        <a href="https://www.twitter.com/PanthiSabin" target="_blank"
-          ><i class="bi bi-twitter hover:text-blue-400 text-xl"></i
-        ></a>
-        <a href="https://www.instagram.com/sabin_panthi" target="_blank"
-          ><i class="bi bi-instagram hover:text-pink-500 text-xl"></i
-        ></a>
-        <a href="https://www.github.com/071Sabin" target="_blank"
-          ><i class="bi bi-github hover:text-gray-300 text-xl"></i
-        ></a>
-        <a href="mailto: 071.sabin.panthi@gmail.com"
-          ><i class="bi bi-envelope-fill hover:text-orange-500 text-xl"></i
-        ></a>
-        <!-- <p><em>Sabin Panthi</em></p> -->
+        <!-- Center: Quick Links or CTA -->
+        <div class="text-center space-y-2">
+          <p class="uppercase text-sm tracking-widest text-gray-500">
+            Connect with Me
+          </p>
+          <div class="flex justify-center gap-6 text-xl">
+            <a
+              href="https://www.facebook.com/071.sabin.panthi"
+              target="_blank"
+              class="hover:text-blue-500 transition"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a
+              href="https://www.twitter.com/PanthiSabin"
+              target="_blank"
+              class="hover:text-sky-400 transition"
+              ><i class="bi bi-twitter"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/sabin_panthi"
+              target="_blank"
+              class="hover:text-pink-500 transition"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a
+              href="https://www.github.com/071Sabin"
+              target="_blank"
+              class="hover:text-gray-200 transition"
+              ><i class="bi bi-github"></i
+            ></a>
+            <a
+              href="mailto:071.sabin.panthi@gmail.com"
+              class="hover:text-orange-400 transition"
+              ><i class="bi bi-envelope-fill"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Right: Optional Navigation or Summary -->
+        <div class="text-center lg:text-right">
+          <p class="text-sm text-gray-500 mt-1">
+            © Sabin Panthi. All rights reserved.
+          </p>
+        </div>
       </div>
     </footer>
 
     <!-- JavaScript for mobile menu toggle -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script>
       const menuToggle = document.getElementById("menu-toggle");
       const mobileMenu = document.getElementById("mobile-menu");
@@ -409,6 +651,61 @@
         const content = document.getElementById(section + "Content");
         content.classList.toggle("expanded");
       }
+
+      particlesJS("particles-js", {
+        particles: {
+          number: { value: 45 },
+          size: { value: 2 },
+          color: { value: "#38bdf8" },
+          line_linked: {
+            enable: true,
+            distance: 150,
+            color: "#38bdf8",
+            opacity: 0.3,
+            width: 1,
+          },
+          move: { enable: true, speed: 1 },
+        },
+        interactivity: {
+          events: { onhover: { enable: true, mode: "repulse" } },
+        },
+      });
+
+      // Typing animation for roles
+      const roles = [
+        "Laravel Full-Stack Developer",
+        "UI/UX Craftsman",
+        "Open Source Contributor",
+        "Problem Solver ⚙️",
+      ];
+      let roleIndex = 0,
+        charIndex = 0;
+      const typingTarget = document.getElementById("typing-role");
+
+      function typeRole() {
+        if (charIndex <= roles[roleIndex].length) {
+          typingTarget.textContent = roles[roleIndex].slice(0, charIndex++);
+          setTimeout(typeRole, 80);
+        } else {
+          setTimeout(() => {
+            charIndex = 0;
+            roleIndex = (roleIndex + 1) % roles.length;
+            typeRole();
+          }, 1500);
+        }
+      }
+      typeRole();
+
+      // Hide greeting bubble after 3 seconds
+      setTimeout(() => {
+        const bubble = document.getElementById("greeting-bubble");
+        if (bubble)
+          bubble.classList.add(
+            "opacity-0",
+            "transition-opacity",
+            "duration-700"
+          );
+      }, 3000);
     </script>
   </body>
 </html>
