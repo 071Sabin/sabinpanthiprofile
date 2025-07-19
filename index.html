@@ -10,76 +10,71 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
 
-    <!-- 4c44f4 -->
-    <head>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap"
-        rel="stylesheet"
-      />
-      <style>
-        @keyframes grow {
-          from {
-            width: 0%;
-          }
-          to {
-            width: var(--target-width, 80%);
-          }
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      @keyframes grow {
+        from {
+          width: 0%;
         }
+        to {
+          width: var(--target-width, 80%);
+        }
+      }
 
-        .animate-grow-bar {
-          animation: grow 1.8s ease-out forwards;
-        }
+      .animate-grow-bar {
+        animation: grow 1.8s ease-out forwards;
+      }
 
-        /* Use utility classes or JS to dynamically control width on scroll if needed */
-        .delay-\[100ms\] {
-          animation-delay: 0.1s;
-          --target-width: 85%;
+      /* Use utility classes or JS to dynamically control width on scroll if needed */
+      .delay-\[100ms\] {
+        animation-delay: 0.1s;
+        --target-width: 85%;
+      }
+      .delay-\[300ms\] {
+        animation-delay: 0.3s;
+        --target-width: 70%;
+      }
+      .delay-\[500ms\] {
+        animation-delay: 0.5s;
+        --target-width: 60%;
+      }
+      .delay-\[700ms\] {
+        animation-delay: 0.7s;
+        --target-width: 80%;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: "Raleway", sans-serif;
+      }
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
         }
-        .delay-\[300ms\] {
-          animation-delay: 0.3s;
-          --target-width: 70%;
+        to {
+          opacity: 1;
+          transform: translateY(0);
         }
-        .delay-\[500ms\] {
-          animation-delay: 0.5s;
-          --target-width: 60%;
+      }
+      @keyframes fade-in {
+        0% {
+          opacity: 0;
+          transform: translateY(-10px);
         }
-        .delay-\[700ms\] {
-          animation-delay: 0.7s;
-          --target-width: 80%;
+        100% {
+          opacity: 1;
+          transform: translateY(0);
         }
-        html {
-          scroll-behavior: smooth;
-        }
-        body {
-          font-family: "Raleway", sans-serif;
-        }
-        @keyframes fadeInUp {
-          from {
-            opacity: 0;
-            transform: translateY(20px);
-          }
-          to {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        @keyframes fade-in {
-          0% {
-            opacity: 0;
-            transform: translateY(-10px);
-          }
-          100% {
-            opacity: 1;
-            transform: translateY(0);
-          }
-        }
-        .animate-fade-in {
-          animation: fade-in 1s ease-out forwards;
-        }
-      </style>
-    </head>
-
-    <script src="https://cdn.tailwindcss.com"></script>
+      }
+      .animate-fade-in {
+        animation: fade-in 1s ease-out forwards;
+      }
+    </style>
   </head>
 
   <body class="bg-slate-900 text-white font-sans">
@@ -87,7 +82,7 @@
       <div
         class="container mx-auto px-4 py-4 flex items-center justify-between"
       >
-        <h1 class="text-2xl font-bold text-cyan-400">Sabin Panthi</h1>
+        <h1><a class="text-2xl font-bold text-cyan-400" href="./index.html">Sabin Panthi</a></h1>
 
         <!-- Mobile Menu Button -->
         <div class="block lg:hidden">
@@ -112,7 +107,7 @@
         <div class="hidden lg:flex items-center space-x-6 text-sm font-medium">
           <a href="#about" class="hover:text-cyan-400">About</a>
           <a href="#services" class="hover:text-cyan-400">Services</a>
-          <a href="#projects" class="hover:text-cyan-400">Projects</a>
+          <a href="./projects.html" class="hover:text-cyan-400">Projects</a>
           <a href="#contact" class="hover:text-cyan-400">Contact</a>
           <a
             href="#talk"
@@ -129,7 +124,7 @@
         <a href="#services" class="block py-3 px-4 hover:bg-slate-700"
           >Services</a
         >
-        <a href="#projects" class="block py-3 px-4 hover:bg-slate-700"
+        <a href="./projects.html" class="block py-3 px-4 hover:bg-slate-700"
           >Projects</a
         >
         <a href="#contact" class="block py-3 px-4 hover:bg-slate-700"
@@ -208,7 +203,7 @@
 
         <!-- CTA Button -->
         <a
-          href="#projects"
+          href="./projects.html"
           class="inline-block mt-4 bg-cyan-500 hover:bg-cyan-600 transition text-white font-semibold px-6 py-3 rounded-full shadow-lg hover:scale-105 active:scale-95 focus:ring-2 focus:ring-cyan-400"
         >
           View My Projects
@@ -326,7 +321,7 @@
             <img
               src="/img/im1.png"
               alt="Sabin Panthi"
-              class="w-1/2 rounded-full mx-auto shadow-2xl border border-cyan-500/10"
+              class="w-1/2 rounded-full mx-auto shadow-2xl border border-cyan-500/10 shadow-lg shadow-cyan-900"
             />
           </div>
 
