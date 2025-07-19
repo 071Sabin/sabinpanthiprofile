@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabin Panthi</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <!-- 4c44f4 -->
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      .project-card {
+        transition: transform 0.5s ease, box-shadow 0.3s ease;
+      }
+
+      .project-card:hover {
+        box-shadow: 0 25px 50px -12px rgba(0, 59, 118, 0.5); /* Stronger shadow on hover */
+      }
+    </style>
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+  </head>
+
+  <body class="bg-slate-900 text-white font-sans">
+    <nav class="absolute w-full z-50 bg-slate-900/80 backdrop-blur-md">
+      <div
+        class="container mx-auto px-4 py-4 flex items-center justify-between"
+      >
+        <h1>
+          <a class="text-2xl font-bold text-cyan-400" href="./index.html"
+            >Sabin Panthi</a
+          >
+        </h1>
+
+        <!-- Mobile Menu Button -->
+        <div class="block lg:hidden">
+          <button id="menu-toggle" class="text-white focus:outline-none">
+            <svg
+              class="w-6 h-6"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M4 6h16M4 12h16M4 18h16"
+              ></path>
+            </svg>
+          </button>
+        </div>
+
+        <!-- Desktop Links -->
+        <div class="hidden lg:flex items-center space-x-6 text-sm font-medium">
+          <a href="./index.html#about" class="hover:text-cyan-400">About</a>
+          <a href="./index.html#services" class="hover:text-cyan-400"
+            >Services</a
+          >
+          <a href="./projects.html" class="hover:text-cyan-400">Projects</a>
+          <a href="#contact" class="hover:text-cyan-400">Contact</a>
+          <a
+            href="#talk"
+            class="bg-cyan-500 hover:bg-cyan-600 transition px-5 py-2 rounded-full text-white"
+          >
+            Let's Talk
+          </a>
+        </div>
+      </div>
+
+      <!-- Mobile Menu -->
+      <div id="mobile-menu" class="hidden lg:hidden bg-slate-800 text-white">
+        <a href="#about" class="block py-3 px-4 hover:bg-slate-700">About</a>
+        <a
+          href="./index.html#services"
+          class="block py-3 px-4 hover:bg-slate-700"
+          >Services</a
+        >
+        <a href="./projects.html" class="block py-3 px-4 hover:bg-slate-700"
+          >Projects</a
+        >
+        <a href="#contact" class="block py-3 px-4 hover:bg-slate-700"
+          >Contact</a
+        >
+        <a href="#talk" class="block py-3 px-4 bg-cyan-600 text-center"
+          >Let's Talk</a
+        >
+      </div>
+    </nav>
+
+    <section class="bg-slate-900 text-white py-20 px-4 lg:px-20" id="projects">
+      <h2 class="text-3xl lg:text-5xl font-bold mb-16 text-center">
+        My Projects
+      </h2>
+
+      <div class="grid gap-12 md:grid-cols-2 lg:grid-cols-3">
+        <div
+          class="project-card group relative bg-slate-800 rounded-2xl p-6 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform-gpu hover:scale-[1.02]"
+          style="perspective: 1000px"
+        >
+          <!-- Icon -->
+          <div class="text-3xl mb-4 text-teal-400">
+            <i class="bi bi-person-plus-fill"></i>
+          </div>
+
+          <!-- Title -->
+          <h3 class="text-2xl font-semibold mb-2 text-white">People Form UI</h3>
+
+          <!-- Meta Info -->
+          <ul class="text-slate-400 text-sm mb-4 space-y-1">
+            <li>
+              <span class="font-medium text-slate-300">Tech:</span> HTML, CSS,
+              JavaScript
+            </li>
+            <li><span class="font-medium text-slate-300">Year:</span> 2024</li>
+          </ul>
+
+          <!-- Features -->
+          <ul
+            class="text-slate-300 text-sm mb-6 list-disc list-inside space-y-1"
+          >
+            <li>Simple add user form with clean layout</li>
+            <li>Responsive across devices</li>
+            <li>Basic validation using JS</li>
+          </ul>
+
+          <!-- Links -->
+          <div class="flex gap-4">
+            <a
+              href="./projects/AddUserForm/index.html"
+              class="text-sm text-cyan-400 hover:underline"
+              >Live Demo</a
+            >
+            <a href="#" class="text-sm text-cyan-400 hover:underline">Code</a>
+          </div>
+        </div>
+
+        <div
+          class="project-card group relative bg-slate-800 rounded-2xl p-6 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform-gpu hover:scale-[1.02]"
+          style="perspective: 1000px"
+        >
+          <!-- Icon/Image -->
+          <div class="w-14 h-14 mb-4">
+            <img
+              src="./projects/nikeDesign/img/nike.png"
+              alt="Nike Logo"
+              class="w-full h-full object-contain"
+            />
+          </div>
+
+          <!-- Title -->
+          <h3 class="text-2xl font-semibold mb-2 text-white">
+            Nike Shoe Hero Section
+          </h3>
+
+          <!-- Meta Info -->
+          <ul class="text-slate-400 text-sm mb-4 space-y-1">
+            <li>
+              <span class="font-medium text-slate-300">Tech:</span> HTML, CSS,
+              JavaScript
+            </li>
+            <li><span class="font-medium text-slate-300">Year:</span> 2024</li>
+          </ul>
+
+          <!-- Features -->
+          <ul
+            class="text-slate-300 text-sm mb-6 list-disc list-inside space-y-1"
+          >
+            <li>Animated Nike-style product hero</li>
+            <li>Fully responsive on all devices</li>
+            <li>Hover interactions and smooth UI</li>
+          </ul>
+
+          <!-- Links -->
+          <div class="flex gap-4">
+            <a
+              href="./projects/nikeDesign/index.html"
+              class="text-sm text-cyan-400 hover:underline"
+              >Live Demo</a
+            >
+            <a
+              href="https://github.com/071Sabin/uiNIKE"
+              target="_blank"
+              class="text-sm text-cyan-400 hover:underline"
+              >Code</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="project-card group relative bg-slate-800 rounded-2xl p-6 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform-gpu hover:scale-[1.02]"
+          style="perspective: 1000px"
+        >
+          <!-- Tag -->
+          <span
+            class="absolute top-4 right-4 text-xs bg-green-600 text-white px-3 py-1 rounded-full font-medium z-10"
+          >
+            Fullstack
+          </span>
+
+          <!-- Icon -->
+          <div class="text-3xl mb-4 text-rose-400">
+            <i class="bi bi-hospital-fill"></i>
+          </div>
+
+          <!-- Title -->
+          <h3 class="text-2xl font-semibold mb-2 text-white">
+            Hospital Management System
+          </h3>
+
+          <!-- Meta Info -->
+          <ul class="text-slate-400 text-sm mb-4 space-y-1">
+            <li>
+              <span class="font-medium text-slate-300">Tech:</span> HTML, CSS,
+              Tailwind, JS, Laravel, PHP
+            </li>
+            <li>
+              <span class="font-medium text-slate-300">Year:</span> 2025 –
+              Ongoing
+            </li>
+          </ul>
+
+          <!-- Features -->
+          <ul
+            class="text-slate-300 text-sm mb-6 list-disc list-inside space-y-1"
+          >
+            <li>Landing page with patient-first UI/UX</li>
+            <li>Care team dashboard with dynamic routing</li>
+            <li>Secure backend with appointment & API sync</li>
+          </ul>
+
+          <!-- Links -->
+          <div class="flex gap-4">
+            <button
+              class="text-sm text-cyan-400 hover:underline cursor-pointer"
+              onclick="showModal()"
+            >
+              Live Demo
+            </button>
+            <button
+              onclick="showModal()"
+              class="text-sm text-cyan-400 hover:underline cursor-pointer"
+            >
+              Code
+            </button>
+          </div>
+        </div>
+
+        <div
+          class="project-card group relative bg-slate-800 rounded-2xl p-6 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform-gpu hover:scale-[1.02]"
+          style="perspective: 1000px"
+        >
+          <!-- Tag -->
+          <span
+            class="absolute top-4 right-4 text-xs bg-green-600 text-white px-3 py-1 rounded-full font-medium z-10"
+          >
+            Fullstack
+          </span>
+
+          <!-- Icon -->
+          <div class="text-3xl mb-4 text-yellow-400">
+            <i class="bi bi-filetype-pdf"></i>
+          </div>
+
+          <!-- Title -->
+          <h3 class="text-2xl font-semibold mb-2 text-white">
+            Image to Text Converter
+          </h3>
+
+          <!-- Meta Info -->
+          <ul class="text-slate-400 text-sm mb-4 space-y-1">
+            <li>
+              <span class="font-medium text-slate-300">Tech:</span> Node.js,
+              Express, Tesseract.js, Tailwind
+            </li>
+            <li><span class="font-medium text-slate-300">Year:</span> 2024</li>
+          </ul>
+
+          <!-- Features -->
+          <ul
+            class="text-slate-300 text-sm mb-6 list-disc list-inside space-y-1"
+          >
+            <li>Upload images and extract text using OCR</li>
+            <li>Download output as plain text or PDF</li>
+            <li>Secure backend API with real-time feedback</li>
+          </ul>
+
+          <!-- Links -->
+          <div class="flex gap-4">
+            <a
+              href="./projects/img2txt/index.html"
+              class="text-sm text-cyan-400 hover:underline cursor-pointer"
+              >Live Demo</a
+            >
+            <a
+              href="https://github.com/071Sabin/imgtotext"
+              target="_blank"
+              class="text-sm text-cyan-400 hover:underline cursor-pointer"
+              >Code</a
+            >
+          </div>
+        </div>
+
+        <div
+          class="project-card group relative bg-slate-800 rounded-2xl p-6 overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform-gpu"
+          style="perspective: 1000px"
+        >
+          <span
+            class="absolute top-4 right-4 text-xs bg-green-600 text-white px-3 py-1 rounded-full font-medium"
+          >
+            Fullstack
+          </span>
+          <i class="bi bi-speedometer text-3xl text-cyan-400 mb-4"></i>
+          <h3 class="text-2xl font-semibold mb-2 text-white">
+            Admin Control Panel
+          </h3>
+
+          <ul
+            class="text-slate-300 text-sm mb-4 space-y-1 list-disc list-inside"
+          >
+            <li>
+              <strong>Tech Stack:</strong> PHP, Laravel, Tailwind, Blade, JS
+            </li>
+            <li><strong>Status:</strong> Built in 2024</li>
+          </ul>
+
+          <ul
+            class="text-slate-300 text-sm mb-6 space-y-1 list-decimal list-inside"
+          >
+            <li>Approve drivers & customers with KYC verification</li>
+            <li>Set commissions, manage top-ups & transactions</li>
+            <li>Broadcast announcements to users</li>
+          </ul>
+
+          <div class="flex gap-4">
+            <a href="#" class="text-sm text-cyan-400 hover:underline"
+              >Live Demo</a
+            >
+            <a href="https://github.com/071Sabin/adminDriverCustomer" class="text-sm text-cyan-400 hover:underline">Code <span class="text-slate-400 italic text-xs">(private repo)</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <div
+      id="modal-overlay"
+      class="fixed inset-0 bg-[rgba(30,41,59,0.9)] hidden z-40"
+    ></div>
+
+    <!-- Modal -->
+    <div
+      id="modal"
+      class="fixed left-1/2 top-1/2 transform -translate-x-1/2 duration-200 -translate-y-1/2 bg-slate-900 text-slate-100 rounded-2xl p-8 w-[90%] hidden max-w-md z-50 shadow-2xl border border-slate-700"
+    >
+      <h2 class="text-xl font-semibold mb-4 text-white">
+        🚧 Project in Progress
+      </h2>
+      <p class="text-slate-400 mb-6 leading-relaxed">
+        This project is currently under development. Please check back later or
+        view the GitHub repo for ongoing updates.
+      </p>
+      <div class="text-right">
+        <button
+          class="bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-500 transition duration-200 cursor-pointer"
+          onclick="showModal()"
+        >
+          OK
+        </button>
+      </div>
+    </div>
+
+    <footer
+      class="bg-gradient-to-r from-slate-900 to-slate-950 text-gray-300 px-6 py-12"
+    >
+      <div
+        class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between gap-10"
+      >
+        <!-- Left Section: Name or Logo -->
+        <div class="text-center lg:text-left">
+          <h2 class="text-2xl font-bold text-white tracking-wide">
+            Sabin Panthi
+          </h2>
+          <p class="text-sm mt-1 text-gray-400">Full Stack Developer</p>
+        </div>
+
+        <!-- Center: Quick Links or CTA -->
+        <div class="text-center space-y-2">
+          <p class="uppercase text-sm tracking-widest text-gray-500">
+            Connect with Me
+          </p>
+          <div class="flex justify-center gap-6 text-xl">
+            <a
+              href="https://www.facebook.com/071.sabin.panthi"
+              target="_blank"
+              class="hover:text-blue-500 transition"
+              ><i class="bi bi-facebook"></i
+            ></a>
+            <a
+              href="https://www.twitter.com/PanthiSabin"
+              target="_blank"
+              class="hover:text-sky-400 transition"
+              ><i class="bi bi-twitter"></i
+            ></a>
+            <a
+              href="https://www.instagram.com/sabin_panthi"
+              target="_blank"
+              class="hover:text-pink-500 transition"
+              ><i class="bi bi-instagram"></i
+            ></a>
+            <a
+              href="https://www.github.com/071Sabin"
+              target="_blank"
+              class="hover:text-gray-200 transition"
+              ><i class="bi bi-github"></i
+            ></a>
+            <a
+              href="mailto:071.sabin.panthi@gmail.com"
+              class="hover:text-orange-400 transition"
+              ><i class="bi bi-envelope-fill"></i
+            ></a>
+          </div>
+        </div>
+
+        <!-- Right: Optional Navigation or Summary -->
+        <div class="text-center lg:text-right">
+          <p class="text-sm text-gray-500 mt-1">
+            © Sabin Panthi. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function showModal() {
+        document.getElementById("modal").classList.toggle("hidden");
+        document.getElementById("modal-overlay").classList.toggle("hidden");
+      }
+
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+
+      menuToggle.addEventListener("click", () => {
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      function toggleExpand(section) {
+        const content = document.getElementById(section + "Content");
+        content.classList.toggle("expanded");
+      }
+
+      document.addEventListener("DOMContentLoaded", () => {
+        const projectCards = document.querySelectorAll(".project-card");
+
+        projectCards.forEach((card) => {
+          card.addEventListener("mousemove", (e) => {
+            const cardRect = card.getBoundingClientRect();
+            const centerX = cardRect.left + cardRect.width / 2;
+            const centerY = cardRect.top + cardRect.height / 2;
+
+            const mouseX = e.clientX;
+            const mouseY = e.clientY;
+
+            const rotateY = ((mouseX - centerX) / cardRect.width) * 20; // Adjust 20 for intensity
+            const rotateX = ((mouseY - centerY) / cardRect.height) * -20; // Adjust -20 for intensity
+
+            card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale(1.02)`;
+            card.style.transition = "none"; // Disable transition during mousemove for smooth real-time update
+          });
+
+          card.addEventListener("mouseleave", () => {
+            card.style.transform =
+              "perspective(1000px) rotateX(0deg) rotateY(0deg) scale(1)";
+            card.style.transition = "transform 0.5s ease"; // Re-enable transition for smooth return
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

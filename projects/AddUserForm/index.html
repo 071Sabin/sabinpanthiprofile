@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Users</title>
+    <link rel="stylesheet" href="./style.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        /* #mainDiv{
+        } */
+    </style>
+</head>
+
+<body class="">
+        <div id="mainDiv" class="h-fit w-fit p-7 mt-5 pb-2 rounded-xl shadow-lg shadow-blue-500/40 hover:shadow-indigo-400/40 mx-auto">
+            <p class=" mb-3">Please Add your name by filling up this form below</p>
+
+            <input type="text" placeholder="Name" id="name" class="mt-2 border-b-2 border-black focus:outline-none pl-3 focus:bg-sky-100 p-2 w-full">
+            <br>
+            <input type="text" placeholder="College" id="college" class="mt-2 border-b-2 border-black pl-3 focus:outline-none focus:bg-sky-100 p-2 w-full">
+            <br>
+            <input type="text" placeholder="faculty" id="faculty" class="mt-2 border-b-2 border-black pl-3 focus:outline-none focus:bg-sky-100 p-2 w-full">
+            <br>
+            <div class="">
+                <button id="btn1" class="mt-5 mb-2 bg-green-600 p-2 rounded-md text-white w-full hover:bg-green-500">Submit</button>
+            </div>
+        </div>
+
+        <hr class="mt-10">
+
+        <!-- items are displayed here -->
+        <div class="listItems" id="listItems">
+        </div>
+</body>
+<script src="./index.js"></script>
+</html>

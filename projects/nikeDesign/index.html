@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>NIKE Shoes</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <style>
+      .navbar {
+        background: radial-gradient(rgb(255, 107, 107), rgb(92, 0, 0));
+      }
+      /* .navbar {
+        background-image: url("./img/nike.png") no-repeat;
+      } */
+      .shoesimage {
+        filter: drop-shadow(10px 30px 10px rgba(0, 0, 0, 0.56));
+        width: 500px;
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="navbar flex flex-col p-10 max-w-screen">
+      <!-- Header -->
+      <header
+        class="text-white flex justify-between items-center p-4 relative z-50"
+      >
+        <img src="./img/logo.png" alt="logo" class="w-20" />
+
+        <!-- Desktop Nav -->
+        <ul class="font-semibold gap-8 hidden lg:flex">
+          <li class="cursor-pointer">NEW RELEASES</li>
+          <li class="cursor-pointer">MEN</li>
+          <li class="cursor-pointer">WOMEN</li>
+          <li class="cursor-pointer">KIDS</li>
+          <li class="cursor-pointer">CUSTOMIZE</li>
+        </ul>
+
+        <!-- Icons (Desktop) -->
+        <div class="gap-4 hidden lg:flex">
+          <i class="bi bi-person-circle text-xl"></i>
+          <i class="bi bi-bag text-xl"></i>
+        </div>
+
+        <!-- Hamburger Icon -->
+        <button
+          id="hamburgerBtn"
+          onclick="toggleMenu()"
+          class="w-8 h-8 lg:hidden relative flex items-center justify-center"
+          aria-label="Toggle Menu"
+          aria-expanded="false"
+        >
+          <span
+            id="burger1"
+            class="absolute w-6 h-0.5 bg-white rounded transition-transform duration-300 ease-in-out"
+          ></span>
+          <span
+            id="burger2"
+            class="absolute w-6 h-0.5 bg-white dark:bg-white rounded transition-opacity duration-300 ease-in-out translate-y-2"
+          ></span>
+          <span
+            id="burger3"
+            class="absolute w-6 h-0.5 bg-white rounded transition-transform duration-300 ease-in-out -translate-y-2"
+          ></span>
+        </button>
+      </header>
+
+      <!-- Mobile Menu -->
+      <nav
+        id="mobileMenu"
+        class="bg-[#4b0000]/90 text-white fixed top-0 left-0 w-full h-full pt-32 p-6 flex flex-col gap-6 transform -translate-x-full transition-transform duration-300 ease-in-out lg:hidden z-40"
+      >
+        <ul class="flex flex-col gap-4 text-lg font-semibold">
+          <li class="cursor-pointer">NEW RELEASES</li>
+          <li class="cursor-pointer">MEN</li>
+          <li class="cursor-pointer">WOMEN</li>
+          <li class="cursor-pointer">KIDS</li>
+          <li class="cursor-pointer">CUSTOMIZE</li>
+        </ul>
+      </nav>
+
+      <div class="grid grid-cols-1 justify-items-center mt-20">
+        <img src="./img/nike.png" alt="nike log word" class="lg:w-1/2 w-full" />
+        <img
+          src="./img/shoe.png"
+          alt="nike log word"
+          class="absolute shoesimage animate__animated animate__fadeInDown w-2/3 lg:w-1/3"
+        />
+      </div>
+      <div class="text-white shoesfirstppagesizes mt-32 lg:mt-40 lg:mt-0">
+        <p class="font-semibold text-2xl">JORDAN 1 RED</p>
+        <p class="font-thin">RELEASE DATE</p>
+        <p class="font-thin">09-06-2024</p>
+        <p class="my-4">SELECT SIZE (US)</p>
+        <div class="grid grid-cols-4 w-52 gap-4">
+          <p class="border border-2 border-white p-2">1</p>
+          <p class="border border-2 border-white p-2">2</p>
+          <p class="border border-2 border-white p-2">3</p>
+          <p class="border border-2 border-white p-2">4</p>
+          <p class="border border-2 border-white p-2">5</p>
+          <p class="border border-2 border-white p-2">6</p>
+          <p class="border border-2 border-white p-2">7</p>
+          <p class="border border-2 border-white p-2">8</p>
+        </div>
+      </div>
+    </nav>
+
+    <script>
+      const mobileMenu = document.getElementById("mobileMenu");
+      const hamburgerBtn = document.getElementById("hamburgerBtn");
+      const burger1 = document.getElementById("burger1");
+      const burger2 = document.getElementById("burger2");
+      const burger3 = document.getElementById("burger3");
+
+      let isOpen = false;
+
+      function toggleMenu() {
+        isOpen = !isOpen;
+
+        hamburgerBtn.setAttribute("aria-expanded", isOpen);
+        mobileMenu.classList.toggle("-translate-x-full");
+
+        if (isOpen) {
+          burger1.classList.add("rotate-45");
+          burger2.classList.add("opacity-0");
+          burger3.classList.add("-rotate-45");
+        } else {
+          burger1.classList.remove("rotate-45");
+          burger2.classList.remove("opacity-0");
+          burger3.classList.remove("-rotate-45");
+        }
+      }
+    </script>
+  </body>
+</html>
