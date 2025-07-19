@@ -1,0 +1,828 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>The Gentle Comb - Men Salon</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Inter:wght@300;404;500;700;900&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+
+    <script>
+      // Enable Tailwind dark mode via class strategy
+      tailwind.config = {
+        darkMode: "class",
+      };
+    </script>
+  </head>
+  <body
+    class="text-gray-800 dark:bg-neutral-900 dark:text-gray-200 antialiased"
+  >
+    <nav
+      class="lg:dark:bg-black/10 bg-white/10 backdrop-blur-lg p-4 py-6 fixed w-full z-50 top-0 text-black transition-colors duration-500"
+    >
+      <div
+        class="container mx-auto flex items-center justify-between flex-wrap"
+      >
+        <!-- Logo -->
+        <a
+          href="#"
+          class="text-white dark:text-white text-xl font-extrabold tracking-tight rounded-md py-1 px-2 transition-colors duration-300 hover:text-amber-400 brand-font"
+        >
+          The Gentle Comb
+        </a>
+
+        <!-- Mobile Menu Button -->
+        <div class="lg:hidden">
+          <button id="mobile-menu-button" class="text-white text-3xl">
+            <i class="bi bi-list"></i>
+          </button>
+        </div>
+
+        <!-- Navigation + CTA Wrapper -->
+        <div
+          id="nav-links"
+          class="hidden lg:flex lg:items-center lg:space-x-8 w-full lg:w-auto mt-4 lg:mt-0 lg:flex-grow"
+        >
+          <!-- Navigation Links -->
+          <ul
+            class="flex flex-col lg:flex-row lg:space-x-8 space-y-4 lg:space-y-0 text-base font-light lg:flex-grow lg:justify-center items-center"
+          >
+            <li><a href="./index.html" class="nav-link">Home</a></li>
+            <li><a href="#services" class="nav-link">Services</a></li>
+            <li><a href="#gallery" class="nav-link">Gallery</a></li>
+            <li><a href="#aboutus" class="nav-link">About Us</a></li>
+            <li><a href="#contact" class="nav-link">Contact</a></li>
+          </ul>
+
+          <!-- Theme Toggle + Book Now -->
+          <div class="flex items-center space-x-4 justify-end">
+            <button id="theme-toggle" class="text-2xl text-gray-300">
+              <i id="theme-icon" class="bi"></i>
+            </button>
+            <a
+              href="#"
+              class="inline-block bg-amber-500 hover:bg-amber-600 text-white dark:text-gray-900 font-bold py-2 px-6 rounded-full shadow-md transform transition-all duration-300 ease-in-out hover:scale-105 focus:outline-none focus:ring-2 focus:ring-amber-400 focus:ring-opacity-75"
+            >
+              Book Now
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <header
+      class="relative overflow-hidden min-h-screen lg:pt-16 px-4 flex items-center justify-center pt-24 lg:pt-0 bg-white dark:bg-black"
+    >
+      <!-- Background Image -->
+      <div
+        class="absolute inset-0 z-0 bg-cover bg-center brightness-60 dark:brightness-50"
+        style="background-image: url('./img/1.png')"
+      ></div>
+
+      <!-- Optional: Dark overlay to improve readability -->
+      <div class="absolute inset-0 bg-black/40 dark:bg-black/60 z-0"></div>
+
+      <!-- Dome-shaped blurred background -->
+      <div
+        class="absolute top-[-10px] left-1/2 transform -translate-x-1/2 w-[600px] h-[600px] bg-gradient-to-br from-amber-300/30 to-purple-400/20 dark:from-amber-500/20 dark:to-indigo-500/10 rounded-full blur-3xl z-0"
+      ></div>
+
+      <!-- Content -->
+      <div
+        class="relative z-10 hero-content text-center max-w-5xl mx-auto flex items-center justify-center flex-col"
+      >
+        <h1
+          class="text-5xl md:text-7xl lg:text-8xl font-black leading-tight tracking-tight mb-6 animate__animated animate__fadeInDown text-white"
+        >
+          Mastering the Art of Unisex's Grooming <i class="bi bi-scissors"></i>
+        </h1>
+        <p
+          id="dynamic-text"
+          class="text-xl lg:text-2xl font-light text-zinc-100 dark:text-zinc-300 mb-10 animate__animated animate__slideInUp transition-opacity duration-500"
+        >
+          <!-- JS will fill this -->
+        </p>
+
+        <a
+          href="#"
+          class="inline-block bg-amber-500 hover:bg-amber-600 text-white dark:text-gray-900 font-bold py-4 px-12 rounded-full shadow-xl transform transition-all duration-300 ease-in-out hover:scale-105 hover:shadow-2xl animate__animated animate__slideInUp focus:outline-none focus:ring-4 focus:ring-amber-400 focus:ring-opacity-75"
+        >
+          Book Your Transformation
+        </a>
+      </div>
+    </header>
+
+    <section
+      id="aboutus"
+      class="relative py-24 md:py-32 px-4 overflow-hidden bg-gray-50 dark:bg-neutral-900 transition-colors duration-400"
+    >
+      <div class="container mx-auto max-w-6xl text-center">
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-16 animate-fade-in-up section-title"
+        >
+          Our Legacy of
+          <span class="text-amber-600 dark:text-amber-400">Craft</span>
+        </h2>
+
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+          <div
+            class="text-left space-y-8 animate-on-scroll"
+            data-animation="fade-in-left"
+          >
+            <p
+              class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed"
+            >
+              At <strong>The Gentle Comb</strong>, we believe grooming is an art
+              form. Established in 2025, our salon has been a sanctuary for men
+              seeking not just a haircut, but a transformation. We blend
+              traditional techniques with modern trends, ensuring every client
+              leaves feeling confident and refined.
+            </p>
+            <p
+              class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed"
+            >
+              Our master barbers are not just stylists; they are craftsmen
+              dedicated to precision, attention to detail, and a personalized
+              experience. From classic shaves to contemporary cuts, we use only
+              the finest products and tools to deliver unparalleled results.
+            </p>
+            <p
+              class="text-lg md:text-xl text-gray-700 dark:text-gray-300 leading-relaxed"
+            >
+              Discover the difference of true craftsmanship and join the legacy
+              of gentlemen who trust The Gentle Comb for their grooming needs.
+              Your journey to perfection begins here.
+            </p>
+          </div>
+
+          <div
+            class="relative w-full h-96 md:h-[500px] flex items-center justify-center animate-on-scroll"
+            data-animation="fade-in-right"
+          >
+            <img
+              src="https://placehold.co/600x600/333333/ffffff?text=Professional+Barber"
+              alt="Professional Barber at The Gentle Comb"
+              class="absolute w-full h-full object-cover rounded-lg shadow-2xl transform-3d element-reveal"
+              data-delay="0.2"
+            />
+
+            <div
+              class="absolute -top-10 -left-10 text-white p-4 rounded-full bg-amber-500/80 dark:bg-amber-600/80 shadow-lg text-4xl transform-3d element-reveal"
+              data-animation="rotate-y"
+              data-delay="0.4"
+            >
+              <i class="bi bi-scissors"></i>
+            </div>
+            <div
+              class="absolute top-1/4 -right-10 text-white p-4 rounded-full bg-gray-700/80 dark:bg-gray-800/80 shadow-lg text-4xl transform-3d element-reveal"
+              data-animation="rotate-y"
+              data-delay="0.6"
+            >
+              <i class="bi bi-droplet-fill"></i>
+            </div>
+            <div
+              class="absolute bottom-1/4 -left-10 text-white p-4 rounded-full bg-red-500/80 dark:bg-red-600/80 shadow-lg text-4xl transform-3d element-reveal"
+              data-animation="rotate-y"
+              data-delay="0.8"
+            >
+              <i class="bi bi-hand-thumbs-up-fill"></i>
+            </div>
+            <div
+              class="absolute -bottom-10 right-0 text-white p-4 rounded-full bg-green-500/80 dark:bg-green-600/80 shadow-lg text-4xl transform-3d element-reveal"
+              data-animation="rotate-y"
+              data-delay="1.0"
+            >
+              <i class="bi bi-brush-fill"></i>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEW SUB-SECTION: Our Guiding Philosophy (Revised) -->
+    <!-- Our Guiding Philosophy Section -->
+    <section
+      class="relative py-16 border-t border-gray-200 dark:border-neutral-700"
+    >
+      <div class="text-center max-w-4xl mx-auto px-4 animate-fadeInUp">
+        <h3
+          class="text-3xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-12"
+        >
+          Our Guiding
+          <span class="text-amber-600 dark:text-amber-400">Philosophy</span>
+        </h3>
+      </div>
+
+      <div
+        class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-7xl mx-auto px-4 group"
+      >
+        <!-- Card 1 -->
+        <div
+          class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 opacity-0 animate-fadeInUp"
+          style="animation-delay: 0.2s"
+        >
+          <div class="text-5xl text-amber-500 dark:text-amber-400 mb-6">
+            <i class="bi bi-scissors"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Precision & Craftsmanship
+          </h4>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Every cut, every shave, every style is executed with meticulous
+            attention to detail, transforming grooming into an art.
+          </p>
+        </div>
+
+        <!-- Card 2 -->
+        <div
+          class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 opacity-0 animate-fadeInUp"
+          style="animation-delay: 0.4s"
+        >
+          <div class="text-5xl text-amber-500 dark:text-amber-400 mb-6">
+            <i class="bi bi-person-check-fill"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Client-Centric Experience
+          </h4>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            Your comfort and satisfaction are paramount. We tailor every service
+            to your unique needs and preferences.
+          </p>
+        </div>
+
+        <!-- Card 3 -->
+        <div
+          class="bg-white dark:bg-neutral-900 border border-neutral-200 dark:border-neutral-700 p-8 rounded-2xl shadow-lg hover:shadow-2xl transition-all duration-300 transform hover:-translate-y-2 opacity-0 animate-fadeInUp"
+          style="animation-delay: 0.6s"
+        >
+          <div class="text-5xl text-amber-500 dark:text-amber-400 mb-6">
+            <i class="bi bi-lightbulb-fill"></i>
+          </div>
+          <h4 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+            Innovation & Tradition
+          </h4>
+          <p class="text-gray-600 dark:text-gray-300 leading-relaxed">
+            We honor classic barbering traditions while embracing modern
+            techniques and trends for timeless style.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section -->
+    <section
+      id="services"
+      class="relative py-24 md:py-32 px-4 overflow-hidden bg-white dark:bg-neutral-950 transition-colors duration-400"
+    >
+      <div class="container mx-auto max-w-6xl text-center">
+        <!-- Section Title -->
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-16 services-section-title-reveal"
+        >
+          Our <span class="text-amber-600 dark:text-amber-400">Services</span>
+        </h2>
+
+        <!-- Services Grid -->
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <!-- Service Card 1: Haircuts & Styling -->
+          <div
+            class="service-card bg-gray-50 dark:bg-neutral-800 p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 ease-in-out border border-gray-100 dark:border-neutral-700 text-center service-card-reveal"
+            data-delay="0.2"
+          >
+            <div
+              class="text-5xl text-amber-500 dark:text-amber-400 mb-6 mx-auto"
+            >
+              <i class="bi bi-person-badge"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Precision Haircuts & Styling
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              From classic fades to modern textured cuts, our barbers craft
+              styles that perfectly suit your look.
+            </p>
+          </div>
+
+          <!-- Service Card 2: Classic Shaves -->
+          <div
+            class="service-card bg-gray-50 dark:bg-neutral-800 p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 ease-in-out border border-gray-100 dark:border-neutral-700 text-center service-card-reveal"
+            data-delay="0.4"
+          >
+            <div
+              class="text-5xl text-amber-500 dark:text-amber-400 mb-6 mx-auto"
+            >
+              <i class="bi bi-droplet-half"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Luxurious Hot Towel Shaves
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Experience the ultimate relaxation with our traditional hot towel
+              shaves, leaving your skin smooth and refreshed.
+            </p>
+          </div>
+
+          <!-- Service Card 3: Beard Grooming -->
+          <div
+            class="service-card bg-gray-50 dark:bg-neutral-800 p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 ease-in-out border border-gray-100 dark:border-neutral-700 text-center service-card-reveal"
+            data-delay="0.6"
+          >
+            <div
+              class="text-5xl text-amber-500 dark:text-amber-400 mb-6 mx-auto"
+            >
+              <i class="bi bi-person-lines-fill"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Expert Beard Trimming & Shaping
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Define your look with precision beard trims, shaping, and
+              conditioning for a perfectly groomed beard.
+            </p>
+          </div>
+
+          <!-- Service Card 4: Facial Treatments -->
+          <div
+            class="service-card bg-gray-50 dark:bg-neutral-800 p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 ease-in-out border border-gray-100 dark:border-neutral-700 text-center service-card-reveal"
+            data-delay="0.8"
+          >
+            <div
+              class="text-5xl text-amber-500 dark:text-amber-400 mb-6 mx-auto"
+            >
+              <i class="bi bi-mask"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Revitalizing Facial Treatments
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Rejuvenate your skin with our tailored facial treatments, designed
+              for men's specific skincare needs.
+            </p>
+          </div>
+
+          <!-- Service Card 5: Hair Coloring -->
+          <div
+            class="service-card bg-gray-50 dark:bg-neutral-800 p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 ease-in-out border border-gray-100 dark:border-neutral-700 text-center service-card-reveal"
+            data-delay="1.0"
+          >
+            <div
+              class="text-5xl text-amber-500 dark:text-amber-400 mb-6 mx-auto"
+            >
+              <i class="bi bi-palette-fill"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Discreet Hair Coloring
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Enhance your natural hair color or cover grays with our subtle and
+              professional coloring services.
+            </p>
+          </div>
+
+          <!-- Service Card 6: Scalp Treatments -->
+          <div
+            class="service-card bg-gray-50 dark:bg-neutral-800 p-8 rounded-xl shadow-lg hover:shadow-xl transform hover:-translate-y-2 transition-all duration-300 ease-in-out border border-gray-100 dark:border-neutral-700 text-center service-card-reveal"
+            data-delay="1.2"
+          >
+            <div
+              class="text-5xl text-amber-500 dark:text-amber-400 mb-6 mx-auto"
+            >
+              <i class="bi bi-head-side-mask"></i>
+            </div>
+            <h3 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">
+              Invigorating Scalp Treatments
+            </h3>
+            <p class="text-gray-700 dark:text-gray-300 leading-relaxed">
+              Promote healthy hair growth and soothe your scalp with our
+              specialized invigorating treatments.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section
+      id="gallery"
+      class="relative py-24 md:py-32 px-4 overflow-hidden bg-gray-50 dark:bg-neutral-900 transition-colors duration-400"
+    >
+      <div class="container mx-auto max-w-7xl text-center">
+        <!-- Section Title -->
+        <h2
+          class="text-4xl md:text-5xl font-extrabold text-gray-900 dark:text-white mb-16 gallery-section-title-reveal"
+        >
+          Our <span class="text-amber-600 dark:text-amber-400">Gallery</span>
+        </h2>
+
+        <!-- Gallery Grid -->
+
+        <div
+          id="default-carousel"
+          class="relative w-full lg:w-11/12 rounded-lg mx-auto bg-gray-400"
+          data-carousel="slide"
+        >
+          <!-- Carousel wrapper -->
+          <div class="relative h-56 overflow-hidden rounded-lg md:h-96">
+            <!-- Item 1 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="./img/1.png"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+              />
+            </div>
+            <!-- Item 2 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="/docs/images/carousel/carousel-2.svg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+              />
+            </div>
+            <!-- Item 3 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="/docs/images/carousel/carousel-3.svg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+              />
+            </div>
+            <!-- Item 4 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="/docs/images/carousel/carousel-4.svg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+              />
+            </div>
+            <!-- Item 5 -->
+            <div class="hidden duration-700 ease-in-out" data-carousel-item>
+              <img
+                src="/docs/images/carousel/carousel-5.svg"
+                class="absolute block w-full -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2"
+                alt="..."
+              />
+            </div>
+          </div>
+          <!-- Slider indicators -->
+          <div
+            class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse"
+          >
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="true"
+              aria-label="Slide 1"
+              data-carousel-slide-to="0"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 2"
+              data-carousel-slide-to="1"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 3"
+              data-carousel-slide-to="2"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 4"
+              data-carousel-slide-to="3"
+            ></button>
+            <button
+              type="button"
+              class="w-3 h-3 rounded-full"
+              aria-current="false"
+              aria-label="Slide 5"
+              data-carousel-slide-to="4"
+            ></button>
+          </div>
+          <!-- Slider controls -->
+          <button
+            type="button"
+            class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-prev
+          >
+            <span
+              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M5 1 1 5l4 4"
+                />
+              </svg>
+              <span class="sr-only">Previous</span>
+            </span>
+          </button>
+          <button
+            type="button"
+            class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+            data-carousel-next
+          >
+            <span
+              class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none"
+            >
+              <svg
+                class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+                aria-hidden="true"
+                xmlns="http://www.w3.org/2000/svg"
+                fill="none"
+                viewBox="0 0 6 10"
+              >
+                <path
+                  stroke="currentColor"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="m1 9 4-4-4-4"
+                />
+              </svg>
+              <span class="sr-only">Next</span>
+            </span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <footer
+      class="bg-gray-100 dark:bg-neutral-900 py-12 px-4 transition-colors duration-300 relative"
+    >
+      <div class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8">
+        <div
+          class="col-span-1 md:col-span-1 flex flex-col items-center md:items-start text-center md:text-left"
+        >
+          <h3
+            class="text-3xl font-bold text-gray-900 dark:text-white mb-4 font-['brand-font']"
+          >
+            The Gentle Comb
+          </h3>
+          <p class="text-gray-700 dark:text-gray-300 text-sm">
+            Where elegance meets expertise. Discover your perfect look with us.
+          </p>
+          <div class="mt-6">
+            <p class="text-gray-700 dark:text-gray-300 text-sm">
+              &copy; 2024 The Gentle Comb. All rights reserved.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-span-1 md:col-span-1 text-center md:text-left">
+          <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">
+            Quick Links
+          </h4>
+          <ul class="space-y-2">
+            <li>
+              <a
+                href="./index.html"
+                class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 text-sm"
+                >Home</a
+              >
+            </li>
+            <li>
+              <a
+                href="#services"
+                class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 text-sm"
+                >Services</a
+              >
+            </li>
+            <li>
+              <a
+                href="#aboutus"
+                class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 text-sm"
+                >About Us</a
+              >
+            </li>
+            <li>
+              <a
+                href="#gallery"
+                class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 text-sm"
+                >Gallery</a
+              >
+            </li>
+            <li>
+              <a
+                href="#contact"
+                class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200 text-sm"
+                >Contact</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div
+          class="col-span-1 md:col-span-1 text-center md:text-left"
+          id="contact"
+        >
+          <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">
+            Contact Us
+          </h4>
+          <ul class="space-y-2 text-sm">
+            <li class="flex items-center justify-center md:justify-start">
+              <svg
+                class="w-5 h-5 mr-2 text-gray-600 dark:text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"
+                ></path>
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"
+                ></path>
+              </svg>
+              <a
+                href="https://maps.app.goo.gl/YourLocation"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
+                >123 Beauty Blvd, Salon City, SC 12345</a
+              >
+            </li>
+            <li class="flex items-center justify-center md:justify-start">
+              <svg
+                class="w-5 h-5 mr-2 text-gray-600 dark:text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"
+                ></path>
+              </svg>
+              <a
+                href="tel:+1234567890"
+                class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
+                >+1 (234) 567-890</a
+              >
+            </li>
+            <li class="flex items-center justify-center md:justify-start">
+              <svg
+                class="w-5 h-5 mr-2 text-gray-600 dark:text-gray-400"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                ></path>
+              </svg>
+              <a
+                href="mailto:info@thegentlecomb.com"
+                class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
+                >info@thegentlecomb.com</a
+              >
+            </li>
+          </ul>
+        </div>
+
+        <div class="col-span-1 md:col-span-1 text-center md:text-left">
+          <h4 class="text-lg font-semibold text-gray-800 dark:text-white mb-4">
+            Follow Us
+          </h4>
+          <div class="flex justify-center md:justify-start space-x-4 mb-6">
+            <a
+              href="#"
+              class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
+              aria-label="Facebook"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.502 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33V22H12c5.523 0 10-4.477 10-10z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
+              aria-label="Instagram"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2C8.75 2 7.75 2.015 7.02 2.046c-.78.03-1.28.093-1.74.288-.46.195-.875.47-1.27.865-.395.395-.67.81-.865 1.27-.195.46-.258.96-.288 1.74-.031.73-.046 1.73-.046 5s.015 4.27.046 5.02c.03.78.093 1.28.288 1.74.195.46.47.875.865 1.27.395.395.81.67 1.27.865.46.195.96.258 1.74.288.75.031 1.75.046 5.04.046s4.29-.015 5.04-.046c.78-.03 1.28-.093 1.74-.288.46-.195.875-.47 1.27-.865.395-.395.67-.81.865-1.27.195-.46.258-.96.288-1.74.031-.75.046-1.75.046-5.04s-.015-4.29-.046-5.04c-.03-.78-.093-1.28-.288-1.74-.195-.46-.47-.875-.865-1.27-.395-.395-.81-.67-1.27-.865-.46-.195-.96-.258-1.74-.288-.75-.031-1.75-.046-5.04-.046ZM12 4.072c3.275 0 3.682.013 4.98.077 1.15.056 1.79.248 2.22.427.42.18.72.394.975.65.255.255.47.555.65.975.18.43.371 1.07.427 2.22.064 1.298.077 1.705.077 4.98s-.013 3.682-.077 4.98c-.056 1.15-.248 1.79-.427 2.22-.18.42-.394.72-.65.975-.255.255-.555.47-.975.65-.43.18-1.07.371-2.22.427-1.298.064-1.705.077-4.98.077s-3.682-.013-4.98-.077c-1.15-.056-1.79-.248-2.22-.427-.42-.18-.72-.394-.975-.65-.255-.255-.47-.555-.65-.975-.18-.43-.371-1.07-.427-2.22-.064-1.298-.077-1.705-.077-4.98s.013-3.682.077-4.98c.056-1.15.248-1.79.427-2.22.18-.42.394-.72.65-.975.255-.255.47-.555.975-.65.43-.18 1.07-.371 2.22-.427C8.318 4.085 8.705 4.072 12 4.072ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm0 2a1 1 0 1 1 0 2 1 1 0 0 1 0-2Zm5.5-4.5a1.25 1.25 0 1 0 0 2.5 1.25 1.25 0 0 0 0-2.5Z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
+              aria-label="YouTube"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+                aria-hidden="true"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M19.812 5.48c.86-.234 1.57.199 1.932.983.367.791.246 1.83-.343 3.518-.707 2.052-1.893 3.585-3.056 4.677l-.607.561-.177.164c-1.636 1.523-3.41 2.572-5.32 3.013A9.75 9.75 0 0112 21.75c-1.055 0-2.062-.163-3.02-.455-1.91-.441-3.684-1.49-5.32-3.013l-.177-.164-.607-.561c-1.163-1.092-2.35-2.625-3.056-4.677-.59-1.688-.711-2.727-.343-3.518.362-.783 1.072-1.217 1.932-.983C4.846 5.564 7.234 6 12 6c4.766 0 7.154-.436 7.812-.52zM12 9a3.25 3.25 0 100 6.5 3.25 3.25 0 000-6.5z"
+                  clip-rule="evenodd"
+                />
+              </svg>
+            </a>
+          </div>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a
+                href="#"
+                class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
+                >Privacy Policy</a
+              >
+            </li>
+            <li>
+              <a
+                href="#"
+                class="text-gray-700 dark:text-gray-300 hover:text-indigo-600 dark:hover:text-indigo-400 transition-colors duration-200"
+                >Terms of Service</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <button
+        id="back-to-top"
+        class="fixed bottom-6 right-6 p-3 rounded-full bg-indigo-600 text-white shadow-lg opacity-0 pointer-events-none transition-all duration-300 ease-in-out hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 dark:focus:ring-offset-neutral-900"
+      >
+        <svg
+          class="w-6 h-6"
+          fill="none"
+          stroke="currentColor"
+          viewBox="0 0 24 24"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            stroke-width="2"
+            d="M5 10l7-7m0 0l7 7m-7-7v18"
+          ></path>
+        </svg>
+        <span class="sr-only">Back to top</span>
+      </button>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/flowbite@3.1.2/dist/flowbite.min.js"></script>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
