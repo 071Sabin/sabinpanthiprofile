@@ -1,0 +1,87 @@
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom CSS for 3D About Us Section */
+/* Initial states for on-scroll animations */
+.animate-on-scroll {
+  opacity: 0;
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.animate-on-scroll[data-animation="fade-in-left"] {
+  transform: translateX(-50px);
+}
+.animate-on-scroll[data-animation="fade-in-right"] {
+  transform: translateX(50px);
+}
+.animate-on-scroll.is-visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* Specific styling for 3D elements */
+.transform-3d {
+  transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+  transform: perspective(1000px) rotateY(0deg) scale(0.95); /* Initial slightly smaller and no rotation */
+  opacity: 0;
+}
+
+.element-reveal.is-visible {
+  opacity: 1;
+  transform: perspective(1000px) rotateY(0deg) scale(1);
+}
+
+.element-reveal.is-visible[data-animation="rotate-y"] {
+  transform: perspective(1000px) rotateY(360deg) scale(1); /* Full rotation on reveal */
+}
+
+/* Adjustments for title reveal */
+.section-title.is-visible {
+  opacity: 1;
+  animation: fadeInScaleUp 1s ease-out forwards; /* Reuse hero animation */
+}
+
+/* Custom CSS for smooth transitions and font definitions */
+body {
+  font-family: "Inter", sans-serif; /* Default body font */
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.nav-link::after {
+  content: "";
+  display: block;
+  height: 1px;
+  width: 0%;
+  background-color: currentColor;
+  transition: width 0.3s ease;
+  margin-top: 2px;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Specific font for the brand name/logo */
+.brand-font {
+  font-family: "Cinzel", serif; /* A classic, elegant font for the logo */
+}
+
+.animate-fadeInUp {
+  animation: fadeInUp 1s ease-out forwards;
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* .nav-link {
+  @apply relative block px-3 py-2 text-gray-900 dark:text-gray-100 hover:text-amber-400 transition-colors duration-300;
+} */

@@ -1,0 +1,71 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+
+@theme {
+  --font-sans: var(--font-space), ui-sans-serif, system-ui, sans-serif;
+  --font-mono: var(--font-mono), ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --color-primary: #06b6d4; /* cyan-500 */
+  --color-primary-hover: #0891b2; /* cyan-600 */
+  --color-primary-light: #22d3ee; /* cyan-400 */
+  
+  --font-sans: "Raleway", sans-serif;
+}
+
+:root {
+  --background: #0f172a; /* slate-900 */
+  --foreground: #ffffff;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+}
+
+/* Animations */
+@keyframes grow {
+  from { width: 0%; }
+  to { width: var(--target-width, 80%); }
+}
+
+.animate-grow-bar {
+  animation: grow 1.8s ease-out forwards;
+}
+
+.delay-\[100ms\] { animation-delay: 0.1s; --target-width: 85%; }
+.delay-\[300ms\] { animation-delay: 0.3s; --target-width: 70%; }
+.delay-\[500ms\] { animation-delay: 0.5s; --target-width: 60%; }
+.delay-\[700ms\] { animation-delay: 0.7s; --target-width: 80%; }
+
+@keyframes fade-in {
+  0% { opacity: 0; transform: translateY(-10px); }
+  100% { opacity: 1; transform: translateY(0); }
+}
+
+.animate-fade-in {
+  animation: fade-in 1s ease-out forwards;
+}
+
+/* Project Card Specific */
+.project-card {
+  transition: transform 0.5s ease, box-shadow 0.3s ease;
+}
+
+.project-card:hover {
+  box-shadow: 0 25px 50px -12px rgba(0, 59, 118, 0.5);
+}
+
+/* Particles interaction area */
+#particles-js {
+  pointer-events: none; /* Allows interacting with things underneath except when needed */
+}
+
+.expanded {
+  max-height: 1000px !important;
+  opacity: 1 !important;
+}
